@@ -33,7 +33,7 @@
 			{#if isHuggingChat}
 				<a
 					href="https://huggingface.co/spaces/huggingchat/chat-ui/discussions/372"
-					class="ml-auto dark:text-gray-400 dark:hover:text-gray-300"
+					class="ml-auto dark:text-neutral-400 dark:hover:text-neutral-300"
 					target="_blank"
 					aria-label="Hub discussion about models"
 				>
@@ -41,13 +41,13 @@
 				</a>
 			{/if}
 		</div>
-		<h2 class="text-gray-500">All models available on {envPublic.PUBLIC_APP_NAME}</h2>
+		<h2 class="text-neutral-500">All models available on {envPublic.PUBLIC_APP_NAME}</h2>
 		<div class="mt-8 grid grid-cols-1 gap-3 sm:gap-5 xl:grid-cols-2">
 			{#each data.models.filter((el) => !el.unlisted) as model, index (model.id)}
 				<div
 					aria-label="Model card"
 					role="region"
-					class="relative flex flex-col gap-2 overflow-hidden rounded-xl border bg-gray-50/50 px-6 py-5 shadow hover:bg-gray-50 hover:shadow-inner dark:border-gray-800/70 dark:bg-gray-950/20 dark:hover:bg-gray-950/40"
+					class="relative flex flex-col gap-2 overflow-hidden rounded-xl border bg-neutral-50/50 px-6 py-5 shadow hover:bg-neutral-50 hover:shadow-inner dark:border-neutral-800/70 dark:bg-neutral-950/20 dark:hover:bg-neutral-950/40"
 					class:active-model={model.id === $settings.activeModel}
 				>
 					<a
@@ -58,13 +58,13 @@
 					<div class="flex items-center justify-between gap-1">
 						{#if model.logoUrl}
 							<img
-								class="overflown aspect-square size-6 rounded border dark:border-gray-700"
+								class="overflown aspect-square size-6 rounded border dark:border-neutral-700"
 								src={model.logoUrl}
 								alt="{model.displayName} logo"
 							/>
 						{:else}
 							<div
-								class="size-6 rounded border border-transparent bg-gray-300 dark:bg-gray-800"
+								class="size-6 rounded border border-transparent bg-neutral-300 dark:bg-neutral-800"
 								aria-hidden="true"
 							/>
 						{/if}
@@ -96,7 +96,7 @@
 							</span>
 						{:else if index === 0}
 							<span
-								class="rounded-full border border-gray-300 px-2 py-0.5 text-xs text-gray-500 dark:border-gray-500 dark:text-gray-400"
+								class="rounded-full border border-neutral-300 px-2 py-0.5 text-xs text-neutral-500 dark:border-neutral-500 dark:text-neutral-400"
 							>
 								Default
 							</span>
@@ -105,7 +105,7 @@
 					<span class="flex items-center gap-2 font-semibold">
 						{model.displayName}
 					</span>
-					<span class="whitespace-pre-wrap text-sm text-gray-500 dark:text-gray-400">
+					<span class="whitespace-pre-wrap text-sm text-neutral-500 dark:text-neutral-400">
 						{model.description || "-"}
 					</span>
 				</div>

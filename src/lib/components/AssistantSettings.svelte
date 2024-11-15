@@ -162,12 +162,12 @@
 		<h2 class="text-xl font-semibold">
 			Edit Assistant: {assistant?.name ?? "assistant"}
 		</h2>
-		<p class="mb-6 text-sm text-gray-500">
+		<p class="mb-6 text-sm text-neutral-500">
 			Modifying an existing assistant will propagate the changes to all users.
 		</p>
 	{:else}
 		<h2 class="text-xl font-semibold">Create new assistant</h2>
-		<p class="mb-6 text-sm text-gray-500">
+		<p class="mb-6 text-sm text-neutral-500">
 			Create and share your own AI Assistant. All assistants are <span
 				class="rounded-full border px-2 py-0.5 leading-none">public</span
 			>
@@ -217,7 +217,7 @@
 								files = null;
 								deleteExistingAvatar = true;
 							}}
-							class="mx-auto w-max text-center text-xs text-gray-600 hover:underline"
+							class="mx-auto w-max text-center text-xs text-neutral-600 hover:underline"
 						>
 							Delete
 						</button>
@@ -226,7 +226,7 @@
 					<div class="mb-1 flex w-max flex-row gap-4">
 						<label
 							for="avatar"
-							class="btn flex h-8 rounded-lg border bg-white px-3 py-1 text-gray-500 shadow-sm transition-all hover:bg-gray-100"
+							class="btn flex h-8 rounded-lg border bg-white px-3 py-1 text-neutral-500 shadow-sm transition-all hover:bg-neutral-100"
 						>
 							<CarbonUpload class="mr-2 text-xs " /> Upload
 						</label>
@@ -239,7 +239,7 @@
 				<div class="mb-1 font-semibold">Name</div>
 				<input
 					name="name"
-					class="w-full rounded-lg border-2 border-gray-200 bg-gray-100 p-2"
+					class="w-full rounded-lg border-2 border-neutral-200 bg-neutral-100 p-2"
 					placeholder="Assistant Name"
 					value={assistant?.name ?? ""}
 				/>
@@ -250,7 +250,7 @@
 				<div class="mb-1 font-semibold">Description</div>
 				<textarea
 					name="description"
-					class="h-15 w-full rounded-lg border-2 border-gray-200 bg-gray-100 p-2"
+					class="h-15 w-full rounded-lg border-2 border-neutral-200 bg-neutral-100 p-2"
 					placeholder="It knows everything about python"
 					value={assistant?.description ?? ""}
 				/>
@@ -262,7 +262,7 @@
 				<div class="flex gap-2">
 					<select
 						name="modelId"
-						class="w-full rounded-lg border-2 border-gray-200 bg-gray-100 p-2"
+						class="w-full rounded-lg border-2 border-neutral-200 bg-neutral-100 p-2"
 						bind:value={modelId}
 					>
 						{#each models.filter((model) => !model.unlisted) as model}
@@ -293,7 +293,7 @@
 									label="Temperature: Controls creativity, higher values allow more variety."
 								>
 									<CarbonHelpFilled
-										class="inline text-xxs text-gray-500 group-hover/tooltip:text-blue-600"
+										class="inline text-xxs text-neutral-500 group-hover/tooltip:text-blue-600"
 									/>
 								</HoverTooltip>
 							</span>
@@ -303,7 +303,7 @@
 								min="0.1"
 								max="2"
 								step="0.1"
-								class="w-20 rounded-lg border-2 border-gray-200 bg-gray-100 px-2 py-1"
+								class="w-20 rounded-lg border-2 border-neutral-200 bg-neutral-100 px-2 py-1"
 								placeholder={selectedModel?.parameters?.temperature?.toString() ?? "1"}
 								value={assistant?.generateSettings?.temperature ?? ""}
 							/>
@@ -315,7 +315,7 @@
 									label="Top P: Sets word choice boundaries, lower values tighten focus."
 								>
 									<CarbonHelpFilled
-										class="inline text-xxs text-gray-500 group-hover/tooltip:text-blue-600"
+										class="inline text-xxs text-neutral-500 group-hover/tooltip:text-blue-600"
 									/>
 								</HoverTooltip>
 							</span>
@@ -323,7 +323,7 @@
 							<input
 								type="number"
 								name="top_p"
-								class="w-20 rounded-lg border-2 border-gray-200 bg-gray-100 px-2 py-1"
+								class="w-20 rounded-lg border-2 border-neutral-200 bg-neutral-100 px-2 py-1"
 								min="0.05"
 								max="1"
 								step="0.05"
@@ -338,7 +338,7 @@
 									label="Repetition penalty: Prevents reuse, higher values decrease repetition."
 								>
 									<CarbonHelpFilled
-										class="inline text-xxs text-gray-500 group-hover/tooltip:text-blue-600"
+										class="inline text-xxs text-neutral-500 group-hover/tooltip:text-blue-600"
 									/>
 								</HoverTooltip>
 							</span>
@@ -348,7 +348,7 @@
 								min="0.1"
 								max="2"
 								step="0.1"
-								class="w-20 rounded-lg border-2 border-gray-200 bg-gray-100 px-2 py-1"
+								class="w-20 rounded-lg border-2 border-neutral-200 bg-neutral-100 px-2 py-1"
 								placeholder={selectedModel?.parameters?.repetition_penalty?.toString() ?? "1.0"}
 								value={assistant?.generateSettings?.repetition_penalty ?? ""}
 							/>
@@ -359,7 +359,7 @@
 									label="Top K: Restricts word options, lower values for predictability."
 								>
 									<CarbonHelpFilled
-										class="inline text-xxs text-gray-500 group-hover/tooltip:text-blue-600"
+										class="inline text-xxs text-neutral-500 group-hover/tooltip:text-blue-600"
 									/>
 								</HoverTooltip>
 							</span>
@@ -369,7 +369,7 @@
 								min="5"
 								max="100"
 								step="5"
-								class="w-20 rounded-lg border-2 border-gray-200 bg-gray-100 px-2 py-1"
+								class="w-20 rounded-lg border-2 border-neutral-200 bg-neutral-100 px-2 py-1"
 								placeholder={selectedModel?.parameters?.top_k?.toString() ?? "50"}
 								value={assistant?.generateSettings?.top_k ?? ""}
 							/>
@@ -385,26 +385,26 @@
 						name="exampleInput1"
 						placeholder="Start Message 1"
 						bind:value={inputMessage1}
-						class="w-full rounded-lg border-2 border-gray-200 bg-gray-100 p-2"
+						class="w-full rounded-lg border-2 border-neutral-200 bg-neutral-100 p-2"
 					/>
 					<input
 						name="exampleInput2"
 						placeholder="Start Message 2"
 						bind:value={inputMessage2}
-						class="w-full rounded-lg border-2 border-gray-200 bg-gray-100 p-2"
+						class="w-full rounded-lg border-2 border-neutral-200 bg-neutral-100 p-2"
 					/>
 
 					<input
 						name="exampleInput3"
 						placeholder="Start Message 3"
 						bind:value={inputMessage3}
-						class="w-full rounded-lg border-2 border-gray-200 bg-gray-100 p-2"
+						class="w-full rounded-lg border-2 border-neutral-200 bg-neutral-100 p-2"
 					/>
 					<input
 						name="exampleInput4"
 						placeholder="Start Message 4"
 						bind:value={inputMessage4}
-						class="w-full rounded-lg border-2 border-gray-200 bg-gray-100 p-2"
+						class="w-full rounded-lg border-2 border-neutral-200 bg-neutral-100 p-2"
 					/>
 				</div>
 				<p class="text-xs text-red-500">{getError("inputMessage1", form)}</p>
@@ -414,11 +414,11 @@
 					<span class="text-smd font-semibold"
 						>Tools
 						<CarbonTools class="inline text-xs text-purple-600" />
-						<span class="ml-1 rounded bg-gray-100 px-1 py-0.5 text-xxs font-normal text-gray-600"
+						<span class="ml-1 rounded bg-neutral-100 px-1 py-0.5 text-xxs font-normal text-neutral-600"
 							>Experimental</span
 						>
 					</span>
-					<p class="text-xs text-gray-500">
+					<p class="text-xs text-neutral-500">
 						Choose up to 3 community tools that will be used with this assistant.
 					</p>
 				</div>
@@ -434,7 +434,7 @@
 							<a
 								href="https://huggingface.co/spaces/huggingchat/chat-ui/discussions/385"
 								target="_blank"
-								class="ml-0.5 rounded bg-gray-100 px-1 py-0.5 text-xxs font-normal text-gray-700 underline decoration-gray-400"
+								class="ml-0.5 rounded bg-neutral-100 px-1 py-0.5 text-xxs font-normal text-neutral-700 underline decoration-neutral-400"
 								>Give feedback</a
 							>
 						{/if}
@@ -450,7 +450,7 @@
 						/>
 						<span class="my-2 text-sm" class:font-semibold={!ragMode}> Default </span>
 						{#if !ragMode}
-							<span class="block text-xs text-gray-500">
+							<span class="block text-xs text-neutral-500">
 								Assistant will not use internet to do information retrieval and will respond faster.
 								Recommended for most Assistants.
 							</span>
@@ -467,7 +467,7 @@
 						/>
 						<span class="my-2 text-sm" class:font-semibold={ragMode === "all"}> Web search </span>
 						{#if ragMode === "all"}
-							<span class="block text-xs text-gray-500">
+							<span class="block text-xs text-neutral-500">
 								Assistant will do a web search on each user request to find information.
 							</span>
 						{/if}
@@ -486,13 +486,13 @@
 						</span>
 					</label>
 					{#if ragMode === "domains"}
-						<span class="mb-2 text-xs text-gray-500">
+						<span class="mb-2 text-xs text-neutral-500">
 							Specify domains and URLs that the application can search, separated by commas.
 						</span>
 
 						<input
 							name="ragDomainList"
-							class="w-full rounded-lg border-2 border-gray-200 bg-gray-100 p-2"
+							class="w-full rounded-lg border-2 border-neutral-200 bg-neutral-100 p-2"
 							placeholder="wikipedia.org,bbc.com"
 							value={assistant?.rag?.allowedDomains?.join(",") ?? ""}
 						/>
@@ -512,13 +512,13 @@
 						</span>
 					</label>
 					{#if ragMode === "links"}
-						<span class="mb-2 text-xs text-gray-500">
+						<span class="mb-2 text-xs text-neutral-500">
 							Specify a maximum of 10 direct URLs that the Assistant will access. HTML & Plain Text
 							only, separated by commas
 						</span>
 						<input
 							name="ragLinkList"
-							class="w-full rounded-lg border-2 border-gray-200 bg-gray-100 p-2"
+							class="w-full rounded-lg border-2 border-neutral-200 bg-neutral-100 p-2"
 							placeholder="https://raw.githubusercontent.com/huggingface/chat-ui/main/README.md"
 							value={assistant?.rag?.allowedLinks.join(",") ?? ""}
 						/>
@@ -545,7 +545,7 @@
 							Will perform a GET request and inject the response into the prompt. Works better with
 							plain text, csv or json content.
 							{#each templateVariables as match}
-								<a href={match} target="_blank" class="text-gray-500 underline decoration-gray-300"
+								<a href={match} target="_blank" class="text-neutral-500 underline decoration-neutral-300"
 									>{match}</a
 								>
 							{/each}
@@ -556,7 +556,7 @@
 			<label class="pb-2 text-sm has-[:checked]:font-semibold">
 				<input type="checkbox" name="dynamicPrompt" bind:checked={dynamicPrompt} />
 				Dynamic Prompt
-				<p class="mb-2 text-xs font-normal text-gray-500">
+				<p class="mb-2 text-xs font-normal text-neutral-500">
 					Allow the use of template variables {"{{url=https://example.com/path}}"}
 					to insert dynamic content into your prompt by making GET requests to specified URLs on each
 					inference.
@@ -566,7 +566,7 @@
 			<div class="relative mb-20 flex h-full flex-col gap-2">
 				<textarea
 					name="preprompt"
-					class="min-h-[8lh] flex-1 rounded-lg border-2 border-gray-200 bg-gray-100 p-2 text-sm"
+					class="min-h-[8lh] flex-1 rounded-lg border-2 border-neutral-200 bg-neutral-100 p-2 text-sm"
 					placeholder="You'll act as..."
 					bind:value={systemPrompt}
 				/>
@@ -587,7 +587,7 @@
 			<div class="absolute bottom-6 flex w-full justify-end gap-2 md:right-0 md:w-fit">
 				<a
 					href={assistant ? `${base}/settings/assistants/${assistant?._id}` : `${base}/settings`}
-					class="flex items-center justify-center rounded-full bg-gray-200 px-5 py-2 font-semibold text-gray-600"
+					class="flex items-center justify-center rounded-full bg-neutral-200 px-5 py-2 font-semibold text-neutral-600"
 				>
 					Cancel
 				</a>
@@ -596,8 +596,8 @@
 					disabled={loading}
 					aria-disabled={loading}
 					class="flex items-center justify-center rounded-full bg-black px-8 py-2 font-semibold"
-					class:bg-gray-200={loading}
-					class:text-gray-600={loading}
+					class:bg-neutral-200={loading}
+					class:text-neutral-600={loading}
 					class:text-white={!loading}
 				>
 					{assistant ? "Save" : "Create"}

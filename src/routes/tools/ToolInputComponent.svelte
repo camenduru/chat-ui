@@ -20,7 +20,7 @@
 {#if type === "str" && typeof innerValue === "string"}
 	<input
 		type="text"
-		class="w-full rounded-lg border-2 border-gray-200 bg-gray-100 p-2"
+		class="w-full rounded-lg border-2 border-neutral-200 bg-neutral-100 p-2"
 		bind:value={innerValue}
 		{disabled}
 	/>
@@ -28,7 +28,7 @@
 	<input
 		type="number"
 		step="1"
-		class="w-full rounded-lg border-2 border-gray-200 bg-gray-100 p-2"
+		class="w-full rounded-lg border-2 border-neutral-200 bg-neutral-100 p-2"
 		{disabled}
 		on:input={(e) => {
 			const value = e.currentTarget.value;
@@ -47,7 +47,7 @@
 	<input
 		type="number"
 		step="0.001"
-		class="w-full rounded-lg border-2 border-gray-200 bg-gray-100 p-2"
+		class="w-full rounded-lg border-2 border-neutral-200 bg-neutral-100 p-2"
 		{disabled}
 		on:input={(e) => {
 			const value = e.currentTarget.value;
@@ -65,7 +65,7 @@
 {:else if type === "bool" && typeof innerValue === "boolean"}
 	<input
 		type="checkbox"
-		class="peer my-auto mr-4 size-6 rounded-lg border-2 border-gray-200 bg-gray-100 p-1"
+		class="peer my-auto mr-4 size-6 rounded-lg border-2 border-neutral-200 bg-neutral-100 p-1"
 		bind:checked={innerValue}
 	/>
 	<!-- Literal['bigvgan_24khz_100band', 'bigvgan_base_24khz_100band', 'bigvgan_22khz_80band', 'bigvgan_base_22khz_80band', 'bigvgan_v2_22khz_80band_256x', 'bigvgan_v2_22khz_80band_fmax8k_256x', 'bigvgan_v2_24khz_100band_256x', 'bigvgan_v2_44khz_128band_256x', 'bigvgan_v2_44khz_128band_512x'] -->
@@ -75,7 +75,7 @@
 		.split(",")
 		.map((option) => option.trim().replaceAll("'", ""))}
 	<select
-		class="w-full rounded-lg border-2 border-gray-200 bg-gray-100 p-2"
+		class="w-full rounded-lg border-2 border-neutral-200 bg-neutral-100 p-2"
 		bind:value={innerValue}
 		{disabled}
 	>

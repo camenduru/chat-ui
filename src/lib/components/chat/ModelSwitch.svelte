@@ -35,7 +35,7 @@
 </script>
 
 <div
-	class="mx-auto mt-0 flex w-fit flex-col items-center justify-center gap-2 rounded-lg border border-gray-200 bg-gray-500/20 p-4 dark:border-gray-800"
+	class="mx-auto mt-0 flex w-fit flex-col items-center justify-center gap-2 rounded-lg border border-neutral-200 bg-neutral-500/20 p-4 dark:border-neutral-800"
 >
 	<span>
 		This model is no longer available. Switch to a new one to continue this conversation:
@@ -43,7 +43,7 @@
 	<div class="flex items-center space-x-2">
 		<select
 			bind:value={selectedModelId}
-			class="rounded-md bg-gray-100 px-2 py-1 dark:bg-gray-900 max-sm:max-w-32"
+			class="rounded-md bg-neutral-100 px-2 py-1 dark:bg-neutral-800 max-sm:max-w-32"
 		>
 			{#each models as model}
 				<option value={model.id}>{model.name}</option>
@@ -52,7 +52,7 @@
 		<button
 			on:click={handleModelChange}
 			disabled={selectedModelId === currentModel.id}
-			class="rounded-md bg-gray-100 px-2 py-1 dark:bg-gray-900"
+			class="rounded-md bg-neutral-100 px-2 py-1 dark:bg-neutral-800"
 		>
 			Accept
 		</button>

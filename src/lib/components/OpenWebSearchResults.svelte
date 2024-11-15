@@ -23,14 +23,14 @@
 </script>
 
 <details
-	class="flex w-fit rounded-xl border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 {classNames} max-w-full"
+	class="flex w-fit rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-800 {classNames} max-w-full"
 >
 	<summary class="grid min-w-72 select-none grid-cols-[40px,1fr] items-center gap-2.5 p-2">
 		<div
-			class="relative grid aspect-square place-content-center overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800"
+			class="relative grid aspect-square place-content-center overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-800"
 		>
 			<svg
-				class="absolute inset-0 text-gray-300 transition-opacity dark:text-gray-700 {loading
+				class="absolute inset-0 text-neutral-300 transition-opacity dark:text-neutral-700 {loading
 					? 'opacity-100'
 					: 'opacity-0'}"
 				width="40"
@@ -52,7 +52,7 @@
 		</div>
 		<dl class="leading-4">
 			<dd class="text-sm">Web Search</dd>
-			<dt class="flex items-center gap-1 truncate whitespace-nowrap text-[.82rem] text-gray-400">
+			<dt class="flex items-center gap-1 truncate whitespace-nowrap text-[.82rem] text-neutral-400">
 				{#if sources}
 					Completed
 				{:else}
@@ -71,25 +71,25 @@
 			<ol>
 				{#each webSearchMessages as message}
 					{#if message.subtype === MessageWebSearchUpdateType.Update}
-						<li class="group border-l pb-6 last:!border-transparent last:pb-0 dark:border-gray-800">
+						<li class="group border-l pb-6 last:!border-transparent last:pb-0 dark:border-neutral-800">
 							<div class="flex items-start">
 								<div
-									class="-ml-1.5 h-3 w-3 flex-none rounded-full bg-gray-200 dark:bg-gray-600 {loading
-										? 'group-last:animate-pulse group-last:bg-gray-300 group-last:dark:bg-gray-500'
+									class="-ml-1.5 h-3 w-3 flex-none rounded-full bg-neutral-200 dark:bg-neutral-600 {loading
+										? 'group-last:animate-pulse group-last:bg-neutral-300 group-last:dark:bg-neutral-500'
 										: ''}"
 								/>
-								<h3 class="text-md -mt-1.5 pl-2.5 text-gray-800 dark:text-gray-100">
+								<h3 class="text-md -mt-1.5 pl-2.5 text-neutral-800 dark:text-neutral-100">
 									{message.message}
 								</h3>
 							</div>
 							{#if message.args}
-								<p class="mt-0.5 pl-4 text-gray-500 dark:text-gray-400">
+								<p class="mt-0.5 pl-4 text-neutral-500 dark:text-neutral-400">
 									{message.args}
 								</p>
 							{/if}
 						</li>
 					{:else if message.subtype === MessageWebSearchUpdateType.Error}
-						<li class="group border-l pb-6 last:!border-transparent last:pb-0 dark:border-gray-800">
+						<li class="group border-l pb-6 last:!border-transparent last:pb-0 dark:border-neutral-800">
 							<div class="flex items-start">
 								<CarbonError
 									class="-ml-1.5 h-3 w-3 flex-none scale-110 text-red-700 dark:text-red-500"
@@ -99,7 +99,7 @@
 								</h3>
 							</div>
 							{#if message.args}
-								<p class="mt-0.5 pl-4 text-gray-500 dark:text-gray-400">
+								<p class="mt-0.5 pl-4 text-neutral-500 dark:text-neutral-400">
 									{message.args}
 								</p>
 							{/if}

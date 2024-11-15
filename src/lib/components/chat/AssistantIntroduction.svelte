@@ -54,7 +54,7 @@
 
 <div class="flex h-full w-full flex-col content-center items-center justify-center pb-52">
 	<div
-		class="relative mt-auto rounded-2xl bg-gray-100 text-gray-600 dark:border-gray-800 dark:bg-gray-800/60 dark:text-gray-300"
+		class="relative mt-auto rounded-2xl bg-neutral-100 text-neutral-600 dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300"
 	>
 		<div
 			class="mt-3 flex min-w-[80dvw] items-center gap-4 p-4 pr-1 sm:min-w-[440px] md:p-8 xl:gap-8"
@@ -69,7 +69,7 @@
 				/>
 			{:else}
 				<div
-					class="flex size-12 flex-none items-center justify-center rounded-full bg-gray-300 object-cover text-xl font-bold uppercase text-gray-500 dark:bg-gray-600 max-sm:self-start sm:text-4xl md:size-32"
+					class="flex size-12 flex-none items-center justify-center rounded-full bg-neutral-300 object-cover text-xl font-bold uppercase text-neutral-500 dark:bg-neutral-600 max-sm:self-start sm:text-4xl md:size-32"
 				>
 					{assistant?.name[0]}
 				</div>
@@ -80,7 +80,7 @@
 
 				<p class="text-xl font-bold sm:text-2xl">{assistant.name}</p>
 				{#if assistant.description}
-					<p class="line-clamp-6 text-sm text-gray-500 dark:text-gray-400">
+					<p class="line-clamp-6 text-sm text-neutral-500 dark:text-neutral-400">
 						{assistant.description}
 					</p>
 				{/if}
@@ -105,7 +105,7 @@
 				{/if}
 
 				{#if assistant.createdByName}
-					<div class="pt-1 text-sm text-gray-400 dark:text-gray-500">
+					<div class="pt-1 text-sm text-neutral-400 dark:text-neutral-500">
 						Created by
 						<a class="hover:underline" href="{base}/assistants?user={assistant.createdByName}">
 							{assistant.createdByName}
@@ -113,7 +113,7 @@
 						{#if assistant.userCount && assistant.userCount > 1}
 							<span class="mx-1">·</span>
 							<div
-								class="inline-flex items-baseline gap-1 text-sm text-gray-400 dark:text-gray-500"
+								class="inline-flex items-baseline gap-1 text-sm text-neutral-400 dark:text-neutral-500"
 								title="Number of users"
 							>
 								<CarbonUserMultiple class="text-xxs" />{formatUserCount(assistant.userCount)} users
@@ -127,7 +127,7 @@
 		<div class="absolute right-3 top-3 md:right-4 md:top-4">
 			<div class="flex flex-row items-center gap-1">
 				<button
-					class="flex h-7 items-center gap-1.5 rounded-full border bg-white px-2.5 py-1 text-gray-800 shadow-sm hover:shadow-inner dark:border-gray-700 dark:bg-gray-700 dark:text-gray-300/90 dark:hover:bg-gray-800 max-sm:px-1.5 md:text-sm"
+					class="flex h-7 items-center gap-1.5 rounded-full border bg-white px-2.5 py-1 text-neutral-800 shadow-sm hover:shadow-inner dark:border-neutral-700 dark:bg-neutral-700 dark:text-neutral-300/90 dark:hover:bg-neutral-800 max-sm:px-1.5 md:text-sm"
 					on:click={() => {
 						if (!isCopied) {
 							share(shareUrl, assistant.name);
@@ -148,7 +148,7 @@
 				</button>
 				<a
 					href="{base}/settings/assistants/{assistant._id.toString()}"
-					class="flex h-7 items-center gap-1.5 rounded-full border bg-white px-2.5 py-1 text-gray-800 shadow-sm hover:shadow-inner dark:border-gray-700 dark:bg-gray-700 dark:text-gray-300/90 dark:hover:bg-gray-800 md:text-sm"
+					class="flex h-7 items-center gap-1.5 rounded-full border bg-white px-2.5 py-1 text-neutral-800 shadow-sm hover:shadow-inner dark:border-neutral-700 dark:bg-neutral-700 dark:text-neutral-300/90 dark:hover:bg-neutral-800 md:text-sm"
 					><IconGear class="text-xxs" />Settings</a
 				>
 			</div>
@@ -160,7 +160,7 @@
 				});
 				goto(`${base}/`);
 			}}
-			class="absolute -bottom-6 right-2 inline-flex items-center justify-center text-xs text-gray-600 underline hover:brightness-50 dark:text-gray-400 dark:hover:brightness-110"
+			class="absolute -bottom-6 right-2 inline-flex items-center justify-center text-xs text-neutral-600 underline hover:brightness-50 dark:text-neutral-400 dark:hover:brightness-110"
 		>
 			<CarbonRenew class="mr-1.5 text-xxs" /> Reset to default model
 		</button>
@@ -176,7 +176,7 @@
 					{#each assistant.exampleInputs as example}
 						<button
 							type="button"
-							class="truncate whitespace-nowrap rounded-xl border bg-gray-50 px-3 py-2 text-left text-smd text-gray-600 hover:bg-gray-100 dark:border-gray-800 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+							class="truncate whitespace-nowrap rounded-xl border bg-neutral-50 px-3 py-2 text-left text-smd text-neutral-600 hover:bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
 							on:click={() => dispatch("message", example)}
 						>
 							{example}

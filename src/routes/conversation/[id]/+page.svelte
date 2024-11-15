@@ -196,6 +196,7 @@
 			// disable websearch if assistant is present
 			const hasAssistant = !!$page.data.assistant;
 			const messageUpdatesAbortController = new AbortController();
+			console.log("Base URL:", base);
 			const messageUpdatesIterator = await fetchMessageUpdates(
 				$page.params.id,
 				{
@@ -323,6 +324,8 @@
 	});
 
 	async function onMessage(event: CustomEvent<string>) {
+		const fullUrl = `${base}/conversation`;
+        console.log("Full URL:", fullUrl);
 		if (!data.shared) {
 			await writeMessage({ prompt: event.detail });
 		} else {

@@ -1,3 +1,4 @@
+import fs from "fs";
 import { sveltekit } from "@sveltejs/kit/vite";
 import Icons from "unplugin-icons/vite";
 import { promises } from "fs";
@@ -36,6 +37,10 @@ export default defineConfig({
 	},
 	server: {
 		open: "/",
+		https: {
+			key: fs.readFileSync("/content/ssl/key.pem"),
+			cert: fs.readFileSync("/content/ssl/cert.pem"),
+		},
 	},
 	test: {
 		setupFiles: ["./scripts/setupTest.ts"],

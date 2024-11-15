@@ -17,9 +17,9 @@
 </script>
 
 <div class="flex w-full flex-col gap-5">
-	<div class="flex flex-col items-start justify-between text-xl font-semibold text-gray-800">
+	<div class="flex flex-col items-start justify-between text-xl font-semibold text-neutral-800">
 		<h2>Application Settings</h2>
-		<span class="text-sm font-light text-gray-500">
+		<span class="text-sm font-light text-neutral-500">
 			Latest deployment <span class="gap-2 font-mono"
 				>{envPublic.PUBLIC_COMMIT_SHA.slice(0, 7)}</span
 			>
@@ -38,7 +38,7 @@
 				</div>
 			</label>
 
-			<p class="text-sm text-gray-500">
+			<p class="text-sm text-neutral-500">
 				Sharing your data will help improve the training data and make open models better over time.
 			</p>
 		{/if}
@@ -47,7 +47,7 @@
 			<Switch name="hideEmojiOnSidebar" bind:checked={$settings.hideEmojiOnSidebar} />
 			<div class="inline cursor-pointer select-none items-center gap-2 pl-2 font-semibold">
 				Hide emoticons in conversation topics
-				<p class="text-sm font-normal text-gray-500">
+				<p class="text-sm font-normal text-neutral-500">
 					Emoticons are shown in the sidebar by default, enable this to hide them.
 				</p>
 			</div>
@@ -66,7 +66,7 @@
 			<Switch name="directPaste" bind:checked={$settings.directPaste} />
 			<div class="inline cursor-pointer select-none items-center gap-2 pl-2 font-semibold">
 				Paste text directly into chat
-				<p class="text-sm font-normal text-gray-500">
+				<p class="text-sm font-normal text-neutral-500">
 					By default, when pasting long text into the chat, we treat it as a plaintext file. Enable
 					this to paste directly into the chat instead.
 				</p>
@@ -75,16 +75,16 @@
 
 		<div class="mt-12 flex flex-col gap-3">
 			<a
-				href="https://huggingface.co/spaces/huggingchat/chat-ui/discussions"
+				href="https://github.com/huggingface/chat-ui/blob/main/LICENSE"
 				target="_blank"
 				rel="noreferrer"
-				class="flex items-center underline decoration-gray-300 underline-offset-2 hover:decoration-gray-700"
-				><CarbonArrowUpRight class="mr-1.5 shrink-0 text-sm " /> Share your feedback on HuggingChat</a
+				class="flex items-center underline decoration-neutral-300 underline-offset-2 hover:decoration-neutral-700"
+				><CarbonArrowUpRight class="mr-1.5 shrink-0 text-sm " />Chat UI License</a
 			>
 			<button
 				on:click|preventDefault={() => (isConfirmingDeletion = true)}
 				type="submit"
-				class="flex items-center underline decoration-gray-300 underline-offset-2 hover:decoration-gray-700"
+				class="flex items-center underline decoration-neutral-300 underline-offset-2 hover:decoration-neutral-700"
 				><CarbonTrashCan class="mr-2 inline text-sm text-red-500" />Delete all conversations</button
 			>
 		</div>
@@ -100,22 +100,22 @@
 				action="{base}/conversations?/delete"
 				class="flex w-full flex-col gap-5 p-6"
 			>
-				<div class="flex items-start justify-between text-xl font-semibold text-gray-800">
+				<div class="flex items-start justify-between text-xl font-semibold text-neutral-800">
 					<h2>Are you sure?</h2>
 					<button
 						type="button"
 						class="group"
 						on:click|stopPropagation={() => (isConfirmingDeletion = false)}
 					>
-						<CarbonClose class="text-gray-900 group-hover:text-gray-500" />
+						<CarbonClose class="text-neutral-800 group-hover:text-neutral-500" />
 					</button>
 				</div>
-				<p class="text-gray-800">
+				<p class="text-neutral-800">
 					This action will delete all your conversations. This cannot be undone.
 				</p>
 				<button
 					type="submit"
-					class="mt-2 rounded-full bg-red-700 px-5 py-2 text-lg font-semibold text-gray-100 ring-gray-400 ring-offset-1 transition-all hover:ring focus-visible:outline-none focus-visible:ring"
+					class="mt-2 rounded-full bg-red-700 px-5 py-2 text-lg font-semibold text-neutral-100 ring-neutral-400 ring-offset-1 transition-all hover:ring focus-visible:outline-none focus-visible:ring"
 				>
 					Confirm deletion
 				</button>

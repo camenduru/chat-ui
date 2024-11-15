@@ -58,21 +58,21 @@
 						<h1 class="break-words text-xl font-semibold">
 							{data.tool.displayName}
 						</h1>
-						<span class="inline rounded-full border px-2 py-0.5 text-sm leading-none text-gray-500"
+						<span class="inline rounded-full border px-2 py-0.5 text-sm leading-none text-neutral-500"
 							>public</span
 						>
 					</div>
 
 					{#if data.tool?.baseUrl}
 						{#if data.tool.baseUrl.startsWith("https://")}
-							<p class="mb-2 break-words font-mono text-gray-500">
+							<p class="mb-2 break-words font-mono text-neutral-500">
 								{data.tool.baseUrl}
 							</p>
 						{:else}
 							<a
 								href="https://huggingface.co/spaces/{data.tool.baseUrl}"
 								target="_blank"
-								class="mb-2 break-words font-mono text-gray-500 hover:underline"
+								class="mb-2 break-words font-mono text-neutral-500 hover:underline"
 							>
 								{data.tool.baseUrl}
 							</a>
@@ -80,12 +80,12 @@
 					{/if}
 
 					{#if data.tool.type === "community"}
-						<p class="text-sm text-gray-500">
+						<p class="text-sm text-neutral-500">
 							Added by
 							<a class="underline" href="{base}/tools?user={data.tool?.createdByName}">
 								{data.tool?.createdByName}
 							</a>
-							<span class="text-gray-300">•</span>
+							<span class="text-neutral-300">•</span>
 							{#if data.tool.useCount === 1}
 								1 run
 							{:else}
@@ -95,12 +95,12 @@
 					{/if}
 
 					<div
-						class="flex flex-wrap items-center gap-x-4 gap-y-2 whitespace-nowrap text-sm text-gray-500 hover:*:text-gray-800 max-sm:justify-center"
+						class="flex flex-wrap items-center gap-x-4 gap-y-2 whitespace-nowrap text-sm text-neutral-500 hover:*:text-neutral-800 max-sm:justify-center"
 					>
 						<div class="w-full sm:w-auto">
 							<button
 								class="{isActive
-									? 'bg-gray-100 text-gray-800'
+									? 'bg-neutral-100 text-neutral-800'
 									: 'bg-black !text-white'} mx-auto my-2 flex w-min items-center justify-center rounded-full px-3 py-1 text-base"
 								name="Activate model"
 								on:click|stopPropagation={() => {
@@ -168,13 +168,13 @@
 									<CarbonFlag class="mr-1.5 inline text-xs" />Report
 								</button>
 							{:else}
-								<button type="button" disabled class="text-gray-700">
+								<button type="button" disabled class="text-neutral-700">
 									<CarbonFlag class="mr-1.5 inline text-xs" />Reported</button
 								>
 							{/if}
 						{/if}
 						{#if data?.user?.isAdmin}
-							<span class="rounded-full border px-2 py-0.5 text-sm leading-none text-gray-500"
+							<span class="rounded-full border px-2 py-0.5 text-sm leading-none text-neutral-500"
 								>{data.tool?.review?.toLocaleUpperCase()}</span
 							>
 
@@ -255,9 +255,9 @@
 			<div>
 				<h2 class="text-lg font-semibold">Direct URL</h2>
 
-				<p class="pb-2 text-sm text-gray-500">Share this link with people to use your tool.</p>
+				<p class="pb-2 text-sm text-neutral-500">Share this link with people to use your tool.</p>
 				<div
-					class="flex flex-row items-center gap-2 rounded-lg border-2 border-gray-200 bg-gray-100 py-2 pl-3 pr-1.5"
+					class="flex flex-row items-center gap-2 rounded-lg border-2 border-neutral-200 bg-neutral-100 py-2 pl-3 pr-1.5"
 				>
 					<div class="relative flex-1 overflow-hidden">
 						<input disabled class="w-full truncate bg-inherit pr-16" value={shareUrl} />
@@ -266,7 +266,7 @@
 								value={shareUrl}
 								classNames="!border-none !shadow-none !py-0 !px-1 !rounded-md"
 							>
-								<div class="flex items-center gap-1.5 text-gray-500 hover:underline">
+								<div class="flex items-center gap-1.5 text-neutral-500 hover:underline">
 									<CarbonLink />Copy
 								</div>
 							</CopyToClipBoardBtn>

@@ -8,7 +8,7 @@
 </script>
 
 <a
-	class="flex items-center rounded-lg px-2.5 py-1 hover:bg-gray-50 dark:hover:bg-gray-800 {isDisabled
+	class="flex items-center rounded-lg px-2.5 py-1 hover:bg-neutral-50 dark:hover:bg-neutral-800 {isDisabled
 		? 'pointer-events-none opacity-50'
 		: ''}"
 	{href}

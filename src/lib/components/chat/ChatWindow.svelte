@@ -264,7 +264,7 @@
 		>
 			{#if $page.data?.assistant && !!messages.length}
 				<a
-					class="mx-auto flex items-center gap-1.5 rounded-full border border-gray-100 bg-gray-50 py-1 pl-1 pr-3 text-sm text-gray-800 hover:bg-gray-100 dark:border-gray-800 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+					class="mx-auto flex items-center gap-1.5 rounded-full border border-neutral-100 bg-neutral-50 py-1 pl-1 pr-3 text-sm text-neutral-800 hover:bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
 					href="{base}/settings/assistants/{$page.data.assistant._id}"
 				>
 					{#if $page.data?.assistant.avatar}
@@ -276,7 +276,7 @@
 						/>
 					{:else}
 						<div
-							class="flex size-6 items-center justify-center rounded-full bg-gray-300 font-bold uppercase text-gray-500"
+							class="flex size-6 items-center justify-center rounded-full bg-neutral-300 font-bold uppercase text-neutral-500"
 						>
 							{$page.data?.assistant.name[0]}
 						</div>
@@ -360,7 +360,7 @@
 		/>
 	</div>
 	<div
-		class="dark:via-gray-80 pointer-events-none absolute inset-x-0 bottom-0 z-0 mx-auto flex w-full max-w-3xl flex-col items-center justify-center bg-gradient-to-t from-white via-white/80 to-white/0 px-3.5 py-4 dark:border-gray-800 dark:from-gray-900 dark:to-gray-900/0 max-md:border-t max-md:bg-white max-md:dark:bg-gray-900 sm:px-5 md:py-8 xl:max-w-4xl [&>*]:pointer-events-auto"
+		class="dark:via-neutral-80 pointer-events-none absolute inset-x-0 bottom-0 z-0 mx-auto flex w-full max-w-3xl flex-col items-center justify-center bg-gradient-to-t from-white via-white/80 to-white/0 px-3.5 py-4 dark:border-neutral-800 dark:from-neutral-800 dark:to-neutral-800/0 max-md:border-t max-md:bg-white max-md:dark:bg-neutral-800 sm:px-5 md:py-8 xl:max-w-4xl [&>*]:pointer-events-auto"
 	>
 		{#if sources?.length && !loading}
 			<div
@@ -425,7 +425,7 @@
 				tabindex="-1"
 				aria-label={isFileUploadEnabled ? "file dropzone" : undefined}
 				on:submit|preventDefault={handleSubmit}
-				class="relative flex w-full max-w-4xl flex-1 items-center rounded-xl border bg-gray-100 focus-within:border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:focus-within:border-gray-500
+				class="relative flex w-full max-w-4xl flex-1 items-center rounded-xl border bg-neutral-100 focus-within:border-neutral-300 dark:border-neutral-600 dark:bg-neutral-700 dark:focus-within:border-neutral-500
             {isReadOnly ? 'opacity-30' : ''}"
 			>
 				{#if onDrag && isFileUploadEnabled}
@@ -456,19 +456,19 @@
 
 						{#if loading}
 							<button
-								class="btn mx-1 my-1 inline-block h-[2.4rem] self-end rounded-lg bg-transparent p-1 px-[0.7rem] text-gray-400 enabled:hover:text-gray-700 disabled:opacity-60 enabled:dark:hover:text-gray-100 dark:disabled:opacity-40 md:hidden"
+								class="btn mx-1 my-1 inline-block h-[2.4rem] self-end rounded-lg bg-transparent p-1 px-[0.7rem] text-neutral-400 enabled:hover:text-neutral-700 disabled:opacity-60 enabled:dark:hover:text-neutral-100 dark:disabled:opacity-40 md:hidden"
 								on:click={() => dispatch("stop")}
 							>
 								<CarbonStopFilledAlt />
 							</button>
 							<div
-								class="mx-1 my-1 hidden h-[2.4rem] items-center p-1 px-[0.7rem] text-gray-400 enabled:hover:text-gray-700 disabled:opacity-60 enabled:dark:hover:text-gray-100 dark:disabled:opacity-40 md:flex"
+								class="mx-1 my-1 hidden h-[2.4rem] items-center p-1 px-[0.7rem] text-neutral-400 enabled:hover:text-neutral-700 disabled:opacity-60 enabled:dark:hover:text-neutral-100 dark:disabled:opacity-40 md:flex"
 							>
 								<EosIconsLoading />
 							</div>
 						{:else}
 							<button
-								class="btn mx-1 my-1 h-[2.4rem] self-end rounded-lg bg-transparent p-1 px-[0.7rem] text-gray-400 enabled:hover:text-gray-700 disabled:opacity-60 enabled:dark:hover:text-gray-100 dark:disabled:opacity-40"
+								class="btn mx-1 my-1 h-[2.4rem] self-end rounded-lg bg-transparent p-1 px-[0.7rem] text-neutral-400 enabled:hover:text-neutral-700 disabled:opacity-60 enabled:dark:hover:text-neutral-100 dark:disabled:opacity-40"
 								disabled={!message || isReadOnly}
 								type="submit"
 								aria-label="Send message"
@@ -481,7 +481,7 @@
 				{/if}
 			</form>
 			<div
-				class="mt-2 flex justify-between self-stretch px-1 text-xs text-gray-400/90 max-md:mb-2 max-sm:gap-2"
+				class="mt-2 flex justify-between self-stretch px-1 text-xs text-neutral-400/90 max-md:mb-2 max-sm:gap-2"
 			>
 				<p>
 					Model:
@@ -493,7 +493,7 @@
 								>{currentModel.displayName}<CarbonCaretDown class="text-xxs" /></a
 							>
 						{:else}
-							<span class="inline-flex items-center line-through dark:border-gray-700">
+							<span class="inline-flex items-center line-through dark:border-neutral-700">
 								{currentModel.id}
 							</span>
 						{/if}
@@ -502,11 +502,11 @@
 						{#if model}
 							<a
 								href="{base}/settings/assistants/{assistant._id}"
-								class="inline-flex items-center border-b hover:text-gray-600 dark:border-gray-700 dark:hover:text-gray-300"
+								class="inline-flex items-center border-b hover:text-neutral-600 dark:border-neutral-700 dark:hover:text-neutral-300"
 								>{model?.displayName}<CarbonCaretDown class="text-xxs" /></a
 							>
 						{:else}
-							<span class="inline-flex items-center line-through dark:border-gray-700">
+							<span class="inline-flex items-center line-through dark:border-neutral-700">
 								{currentModel.id}
 							</span>
 						{/if}
@@ -516,7 +516,7 @@
 				</p>
 				{#if messages.length}
 					<button
-						class="flex flex-none items-center hover:text-gray-400 max-sm:rounded-lg max-sm:bg-gray-50 max-sm:px-2.5 dark:max-sm:bg-gray-800"
+						class="flex flex-none items-center hover:text-neutral-400 max-sm:rounded-lg max-sm:bg-neutral-50 max-sm:px-2.5 dark:max-sm:bg-neutral-800"
 						type="button"
 						class:hover:underline={!isSharedRecently}
 						on:click={onShare}

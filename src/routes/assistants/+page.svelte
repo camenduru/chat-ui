@@ -120,12 +120,12 @@
 		<div class="flex items-center">
 			<h1 class="text-2xl font-bold">Assistants</h1>
 			{#if isHuggingChat}
-				<div class="5 ml-1.5 rounded-lg text-xxs uppercase text-gray-500 dark:text-gray-500">
+				<div class="5 ml-1.5 rounded-lg text-xxs uppercase text-neutral-500 dark:text-neutral-500">
 					beta
 				</div>
 				<a
 					href="https://huggingface.co/spaces/huggingchat/chat-ui/discussions/357"
-					class="ml-auto dark:text-gray-400 dark:hover:text-gray-300"
+					class="ml-auto dark:text-neutral-400 dark:hover:text-neutral-300"
 					target="_blank"
 					aria-label="Hub discussion about assistants"
 				>
@@ -133,10 +133,10 @@
 				</a>
 			{/if}
 		</div>
-		<h2 class="text-gray-500">Popular assistants made by the community</h2>
+		<h2 class="text-neutral-500">Popular assistants made by the community</h2>
 		<div class="mt-6 flex justify-between gap-2 max-sm:flex-col sm:items-center">
 			<select
-				class="mt-1 h-[34px] rounded-lg border border-gray-300 bg-gray-50 px-2 text-sm text-gray-900 focus:border-blue-700 focus:ring-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
+				class="mt-1 h-[34px] rounded-lg border border-neutral-300 bg-neutral-50 px-2 text-sm text-neutral-800 focus:border-blue-700 focus:ring-blue-700 dark:border-neutral-600 dark:bg-neutral-700 dark:text-white dark:placeholder-neutral-400"
 				bind:value={data.selectedModel}
 				on:change={onModelChange}
 				aria-label="Filter assistants by model"
@@ -154,7 +154,7 @@
 			{/if}
 			<a
 				href={`${base}/settings/assistants/new`}
-				class="flex items-center gap-1 whitespace-nowrap rounded-lg border bg-white py-1 pl-1.5 pr-2.5 shadow-sm hover:bg-gray-50 hover:shadow-none dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-700"
+				class="flex items-center gap-1 whitespace-nowrap rounded-lg border bg-white py-1 pl-1.5 pr-2.5 shadow-sm hover:bg-neutral-50 hover:shadow-none dark:border-neutral-600 dark:bg-neutral-700 dark:hover:bg-neutral-700"
 			>
 				<CarbonAdd />Create new assistant
 			</a>
@@ -163,7 +163,7 @@
 		<div class="mt-7 flex flex-wrap items-center gap-x-2 gap-y-3 text-sm">
 			{#if assistantsCreator && !createdByMe}
 				<div
-					class="flex items-center gap-1.5 rounded-full border border-gray-300 bg-gray-50 px-3 py-1 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+					class="flex items-center gap-1.5 rounded-full border border-neutral-300 bg-neutral-50 px-3 py-1 dark:border-neutral-600 dark:bg-neutral-700 dark:text-white"
 				>
 					{assistantsCreator}'s Assistants
 					<a
@@ -173,7 +173,7 @@
 						on:click={resetFilter}
 						class="group"
 						><CarbonClose
-							class="text-xs group-hover:text-gray-800 dark:group-hover:text-gray-300"
+							class="text-xs group-hover:text-neutral-800 dark:group-hover:text-neutral-300"
 						/></a
 					>
 				</div>
@@ -181,7 +181,7 @@
 					<a
 						href="https://hf.co/{assistantsCreator}"
 						target="_blank"
-						class="ml-auto flex items-center text-xs text-gray-500 underline hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
+						class="ml-auto flex items-center text-xs text-neutral-500 underline hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-300"
 						><CarbonArrowUpRight class="mr-1 flex-none text-[0.58rem]" target="_blank" />View {assistantsCreator}
 						on HF</a
 					>
@@ -193,8 +193,8 @@
 					})}
 					on:click={resetFilter}
 					class="flex items-center gap-1.5 rounded-full border px-3 py-1 {!assistantsCreator
-						? 'border-gray-300 bg-gray-50  dark:border-gray-600 dark:bg-gray-700 dark:text-white'
-						: 'border-transparent text-gray-400 hover:text-gray-800 dark:hover:text-gray-300'}"
+						? 'border-neutral-300 bg-neutral-50  dark:border-neutral-600 dark:bg-neutral-700 dark:text-white'
+						: 'border-transparent text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300'}"
 				>
 					<CarbonEarthAmerica class="text-xs" />
 					Community
@@ -208,16 +208,16 @@
 						on:click={resetFilter}
 						class="flex items-center gap-1.5 truncate rounded-full border px-3 py-1 {assistantsCreator &&
 						createdByMe
-							? 'border-gray-300 bg-gray-50  dark:border-gray-600 dark:bg-gray-700 dark:text-white'
-							: 'border-transparent text-gray-400 hover:text-gray-800 dark:hover:text-gray-300'}"
+							? 'border-neutral-300 bg-neutral-50  dark:border-neutral-600 dark:bg-neutral-700 dark:text-white'
+							: 'border-transparent text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300'}"
 						>{data.user.username}
 					</a>
 				{/if}
 			{/if}
 			<div
-				class="relative ml-auto flex h-[30px] w-40 items-center rounded-full border px-2 has-[:focus]:border-gray-400 dark:border-gray-600 sm:w-64"
+				class="relative ml-auto flex h-[30px] w-40 items-center rounded-full border px-2 has-[:focus]:border-neutral-400 dark:border-neutral-600 sm:w-64"
 			>
-				<CarbonSearch class="pointer-events-none absolute left-2 text-xs text-gray-400" />
+				<CarbonSearch class="pointer-events-none absolute left-2 text-xs text-neutral-400" />
 				<input
 					class="h-[30px] w-full bg-transparent pl-5 focus:outline-none"
 					placeholder="Filter by name"
@@ -233,7 +233,7 @@
 				bind:value={sortValue}
 				on:change={sortAssistants}
 				aria-label="Sort assistants"
-				class="rounded-lg border border-gray-300 bg-gray-50 px-2 py-1 text-sm text-gray-900 focus:border-blue-700 focus:ring-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
+				class="rounded-lg border border-neutral-300 bg-neutral-50 px-2 py-1 text-sm text-neutral-800 focus:border-blue-700 focus:ring-blue-700 dark:border-neutral-600 dark:bg-neutral-700 dark:text-white dark:placeholder-neutral-400"
 			>
 				<option value={SortKey.TRENDING}>{SortKey.TRENDING}</option>
 				<option value={SortKey.POPULAR}>{SortKey.POPULAR}</option>
@@ -249,7 +249,7 @@
 					!!assistant?.dynamicPrompt}
 
 				<button
-					class="relative flex flex-col items-center justify-center overflow-hidden text-balance rounded-xl border bg-gray-50/50 px-4 py-6 text-center shadow hover:bg-gray-50 hover:shadow-inner dark:border-gray-800/70 dark:bg-gray-950/20 dark:hover:bg-gray-950/40 max-sm:px-4 sm:h-64 sm:pb-4 xl:pt-8
+					class="relative flex flex-col items-center justify-center overflow-hidden text-balance rounded-xl border bg-neutral-50/50 px-4 py-6 text-center shadow hover:bg-neutral-50 hover:shadow-inner dark:border-neutral-800/70 dark:bg-neutral-950/20 dark:hover:bg-neutral-950/40 max-sm:px-4 sm:h-64 sm:pb-4 xl:pt-8
 					{!(assistant.review === ReviewStatus.APPROVED) && !createdByMe ? 'border !border-red-500/30' : ''}"
 					on:click={() => {
 						if (data.settings.assistants.includes(assistant._id.toString())) {
@@ -262,14 +262,14 @@
 				>
 					{#if assistant.userCount && assistant.userCount > 1}
 						<div
-							class="absolute right-3 top-3 flex items-center gap-1 text-xs text-gray-400"
+							class="absolute right-3 top-3 flex items-center gap-1 text-xs text-neutral-400"
 							title="Number of users"
 						>
 							<CarbonUserMultiple class="text-xxs" />{formatUserCount(assistant.userCount)}
 						</div>
 					{/if}
 
-					<div class="absolute left-3 top-3 flex items-center gap-1 text-xs text-gray-400">
+					<div class="absolute left-3 top-3 flex items-center gap-1 text-xs text-neutral-400">
 						{#if assistant.tools?.length}
 							<div
 								class="grid size-5 place-items-center rounded-full bg-purple-500/10"
@@ -296,7 +296,7 @@
 						/>
 					{:else}
 						<div
-							class="mb-2 flex aspect-square size-12 flex-none items-center justify-center rounded-full bg-gray-300 text-2xl font-bold uppercase text-gray-500 dark:bg-gray-800 sm:mb-6 sm:size-20"
+							class="mb-2 flex aspect-square size-12 flex-none items-center justify-center rounded-full bg-neutral-300 text-2xl font-bold uppercase text-neutral-500 dark:bg-neutral-800 sm:mb-6 sm:size-20"
 						>
 							{assistant.name[0]}
 						</div>
@@ -306,11 +306,11 @@
 					>
 						{assistant.name}
 					</h3>
-					<p class="line-clamp-4 text-xs text-gray-700 dark:text-gray-400 sm:line-clamp-2">
+					<p class="line-clamp-4 text-xs text-neutral-700 dark:text-neutral-400 sm:line-clamp-2">
 						{assistant.description}
 					</p>
 					{#if assistant.createdByName}
-						<p class="mt-auto pt-2 text-xs text-gray-400 dark:text-gray-500">
+						<p class="mt-auto pt-2 text-xs text-neutral-400 dark:text-neutral-500">
 							Created by <a
 								class="hover:underline"
 								href="{base}/assistants?user={assistant.createdByName}"

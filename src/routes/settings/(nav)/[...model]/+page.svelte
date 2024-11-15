@@ -37,7 +37,7 @@
 		</h2>
 
 		{#if model.description}
-			<p class="whitespace-pre-wrap text-gray-600">
+			<p class="whitespace-pre-wrap text-neutral-600">
 				{model.description}
 			</p>
 		{/if}
@@ -118,10 +118,10 @@
 
 	<div class="relative flex w-full flex-col gap-2">
 		<div class="flex w-full flex-row content-between">
-			<h3 class="mb-1.5 text-lg font-semibold text-gray-800">System Prompt</h3>
+			<h3 class="mb-1.5 text-lg font-semibold text-neutral-800">System Prompt</h3>
 			{#if hasCustomPreprompt}
 				<button
-					class="ml-auto underline decoration-gray-300 hover:decoration-gray-700"
+					class="ml-auto underline decoration-neutral-300 hover:decoration-neutral-700"
 					on:click|stopPropagation={() =>
 						($settings.customPrompts[$page.params.model] = model.preprompt)}
 				>
@@ -132,7 +132,7 @@
 		<textarea
 			aria-label="Custom system prompt"
 			rows="10"
-			class="w-full resize-none rounded-md border-2 bg-gray-100 p-2"
+			class="w-full resize-none rounded-md border-2 bg-neutral-100 p-2"
 			bind:value={$settings.customPrompts[$page.params.model]}
 		/>
 		{#if model.tokenizer && $settings.customPrompts[$page.params.model]}

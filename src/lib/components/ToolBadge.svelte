@@ -7,7 +7,7 @@
 </script>
 
 <div
-	class="relative flex items-center justify-center space-x-2 rounded border border-gray-300 bg-gray-200 px-2 py-1"
+	class="relative flex items-center justify-center space-x-2 rounded border border-neutral-300 bg-neutral-200 px-2 py-1"
 >
 	{#if browser}
 		{#await fetch(`${base}/api/tools/${toolId}`).then((res) => res.json()) then value}
@@ -20,14 +20,14 @@
 					>{value.displayName}</a
 				>
 				{#if value.createdByName}
-					<p class="text-center text-xs text-gray-500">
+					<p class="text-center text-xs text-neutral-500">
 						Created by
 						<a class="underline" href="{base}/tools?user={value.createdByName}" target="_blank"
 							>{value.createdByName}</a
 						>
 					</p>
 				{:else}
-					<p class="text-center text-xs text-gray-500">Official HuggingChat tool</p>
+					<p class="text-center text-xs text-neutral-500">Official HuggingChat tool</p>
 				{/if}
 			</div>
 		{/await}

@@ -57,21 +57,21 @@
 	<a
 		href={`${base}/`}
 		on:click={handleNewChatClick}
-		class="flex rounded-lg border bg-white px-2 py-0.5 text-center shadow-sm hover:shadow-none dark:border-gray-600 dark:bg-gray-700 sm:text-smd"
+		class="flex rounded-lg border bg-white px-2 py-0.5 text-center shadow-sm hover:shadow-none dark:border-neutral-600 dark:bg-neutral-700 sm:text-smd"
 	>
 		New Chat
 	</a>
 </div>
 <div
-	class="scrollbar-custom flex flex-col gap-1 overflow-y-auto rounded-r-xl from-gray-50 px-3 pb-3 pt-2 text-[.9rem] dark:from-gray-800/30 max-sm:bg-gradient-to-t md:bg-gradient-to-l"
+	class="scrollbar-custom flex flex-col gap-1 overflow-y-auto rounded-r-xl from-neutral-50 px-3 pb-3 pt-2 text-[.9rem] dark:from-neutral-800/30 max-sm:bg-gradient-to-t md:bg-gradient-to-l"
 >
 	{#await groupedConversations}
 		{#if $page.data.nConversations > 0}
 			<div class="overflow-y-hidden">
 				<div class="flex animate-pulse flex-col gap-4">
-					<div class="h-4 w-24 rounded bg-gray-200 dark:bg-gray-700" />
+					<div class="h-4 w-24 rounded bg-neutral-200 dark:bg-neutral-700" />
 					{#each Array(100) as _}
-						<div class="ml-2 h-5 w-4/5 gap-5 rounded bg-gray-200 dark:bg-gray-700" />
+						<div class="ml-2 h-5 w-4/5 gap-5 rounded bg-neutral-200 dark:bg-neutral-700" />
 					{/each}
 				</div>
 			</div>
@@ -80,7 +80,7 @@
 		<div class="flex flex-col gap-1">
 			{#each Object.entries(groupedConversations) as [group, convs]}
 				{#if convs.length}
-					<h4 class="mb-1.5 mt-4 pl-0.5 text-sm text-gray-400 first:mt-0 dark:text-gray-500">
+					<h4 class="mb-1.5 mt-4 pl-0.5 text-sm text-neutral-400 first:mt-0 dark:text-neutral-500">
 						{titles[group]}
 					</h4>
 					{#each convs as conv}
@@ -92,22 +92,22 @@
 	{/await}
 </div>
 <div
-	class="mt-0.5 flex flex-col gap-1 rounded-r-xl p-3 text-sm md:bg-gradient-to-l md:from-gray-50 md:dark:from-gray-800/30"
+	class="mt-0.5 flex flex-col gap-1 rounded-r-xl p-3 text-sm md:bg-gradient-to-l md:from-neutral-50 md:dark:from-neutral-800/30"
 >
 	{#if user?.username || user?.email}
 		<form
 			action="{base}/logout"
 			method="post"
-			class="group flex items-center gap-1.5 rounded-lg pl-2.5 pr-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+			class="group flex items-center gap-1.5 rounded-lg pl-2.5 pr-2 hover:bg-neutral-100 dark:hover:bg-neutral-700"
 		>
 			<span
-				class="flex h-9 flex-none shrink items-center gap-1.5 truncate pr-2 text-gray-500 dark:text-gray-400"
+				class="flex h-9 flex-none shrink items-center gap-1.5 truncate pr-2 text-neutral-500 dark:text-neutral-400"
 				>{user?.username || user?.email}</span
 			>
 			{#if !user.logoutDisabled}
 				<button
 					type="submit"
-					class="ml-auto h-6 flex-none items-center gap-1.5 rounded-md border bg-white px-2 text-gray-700 shadow-sm group-hover:flex hover:shadow-none dark:border-gray-600 dark:bg-gray-600 dark:text-gray-400 dark:hover:text-gray-300 md:hidden"
+					class="ml-auto h-6 flex-none items-center gap-1.5 rounded-md border bg-white px-2 text-neutral-700 shadow-sm group-hover:flex hover:shadow-none dark:border-neutral-600 dark:bg-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300 md:hidden"
 				>
 					Sign Out
 				</button>
@@ -118,7 +118,7 @@
 		<form action="{base}/login" method="POST" target="_parent">
 			<button
 				type="submit"
-				class="flex h-9 w-full flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+				class="flex h-9 w-full flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-neutral-500 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-700"
 			>
 				Login
 			</button>
@@ -127,18 +127,18 @@
 	<button
 		on:click={switchTheme}
 		type="button"
-		class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+		class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-neutral-500 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-700"
 	>
 		Theme
 	</button>
 	{#if nModels > 1}
 		<a
 			href="{base}/models"
-			class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+			class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-neutral-500 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-700"
 		>
 			Models
 			<span
-				class="ml-auto rounded-full border border-gray-300 px-2 py-0.5 text-xs text-gray-500 dark:border-gray-500 dark:text-gray-400"
+				class="ml-auto rounded-full border border-neutral-300 px-2 py-0.5 text-xs text-neutral-500 dark:border-neutral-500 dark:text-neutral-400"
 				>{nModels}</span
 			>
 		</a>
@@ -146,7 +146,7 @@
 	{#if $page.data.enableAssistants}
 		<a
 			href="{base}/assistants"
-			class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+			class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-neutral-500 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-700"
 		>
 			Assistants
 		</a>
@@ -154,7 +154,7 @@
 	{#if $page.data.enableCommunityTools}
 		<a
 			href="{base}/tools"
-			class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+			class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-neutral-500 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-700"
 		>
 			Tools
 			<span
@@ -166,14 +166,14 @@
 
 	<a
 		href="{base}/settings"
-		class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+		class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-neutral-500 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-700"
 	>
 		Settings
 	</a>
 	{#if envPublic.PUBLIC_APP_NAME === "HuggingChat"}
 		<a
 			href="{base}/privacy"
-			class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+			class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-neutral-500 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-700"
 		>
 			About & Privacy
 		</a>
