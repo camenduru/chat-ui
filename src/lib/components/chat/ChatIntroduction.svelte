@@ -17,7 +17,3 @@
 
 	const dispatch = createEventDispatcher<{ message: string }>();
 </script>
-
-<div class="my-auto grid gap-8 lg:grid-cols-3">
-	<div class="h-40 sm:h-24" />
-</div>
