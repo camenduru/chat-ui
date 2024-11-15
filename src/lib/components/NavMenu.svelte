@@ -49,10 +49,10 @@
 <div class="sticky top-0 flex flex-none items-center justify-between px-3 py-3.5 max-sm:pt-0">
 	<a
 		class="flex items-center rounded-xl text-lg font-semibold"
-		href="{envPublic.PUBLIC_ORIGIN}{base}/"
+		href="https://tost.ai"
 	>
 		<Logo classNames="mr-1" />
-		{envPublic.PUBLIC_APP_NAME}
+		Tost AI
 	</a>
 	<a
 		href={`${base}/`}
