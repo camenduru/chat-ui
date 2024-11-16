@@ -273,8 +273,8 @@
 		{:else}
 			<img
 				alt=""
-				src="https://huggingface.co/avatars/2edb18bd0206c16b433841a47f53fa8e.svg"
-				class="mt-5 h-3 w-3 flex-none select-none rounded-full shadow-lg"
+				src="https://chat.tost.ai/tostchat/logo.png"
+				class="mt-5 h-5 w-5 flex-none select-none rounded-full shadow-lg"
 			/>
 		{/if}
 		<div
