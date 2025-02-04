@@ -132,7 +132,7 @@
 		tabindex="0"
 		inputmode="text"
 		class="scrollbar-custom max-h-[4lh] w-full resize-none overflow-y-auto overflow-x-hidden border-0 bg-transparent px-2.5 py-2.5 outline-none focus:ring-0 focus-visible:ring-0 max-sm:text-[16px] sm:px-3"
-		class:text-gray-400={disabled}
+		class:text-neutral-400={disabled}
 		bind:value
 		bind:this={textareaElement}
 		on:keydown={handleKeydown}
@@ -146,43 +146,8 @@
 
 	{#if !assistant}
 		<div
-			class="scrollbar-custom -ml-0.5 flex max-w-[calc(100%-40px)] flex-wrap items-center justify-start gap-2.5 px-3 pb-2.5 pt-1.5 text-gray-500 dark:text-gray-400 max-md:flex-nowrap max-md:overflow-x-auto sm:gap-2"
+			class="scrollbar-custom -ml-0.5 flex max-w-[calc(100%-40px)] flex-wrap items-center justify-start gap-2.5 px-3 pb-2.5 pt-1.5 text-neutral-500 dark:text-neutral-400 max-md:flex-nowrap max-md:overflow-x-auto sm:gap-2"
 		>
-			<HoverTooltip
-				label="Search the web"
-				position="top"
-				TooltipClassNames="text-xs !text-left !w-auto whitespace-nowrap !py-1 !mb-0 max-sm:hidden {webSearchIsOn
-					? 'hidden'
-					: ''}"
-			>
-				<button
-					class="base-tool"
-					class:active-tool={webSearchIsOn}
-					disabled={loading}
-					on:click|preventDefault={async () => {
-						if (modelHasTools) {
-							if (webSearchIsOn) {
-								await settings.instantSet({
-									tools: ($settings.tools ?? []).filter(
-										(t) => t !== webSearchToolId && t !== fetchUrlToolId
-									),
-								});
-							} else {
-								await settings.instantSet({
-									tools: [...($settings.tools ?? []), webSearchToolId, fetchUrlToolId],
-								});
-							}
-						} else {
-							$webSearchParameters.useSearch = !webSearchIsOn;
-						}
-					}}
-				>
-					<IconInternet classNames="text-xl" />
-					{#if webSearchIsOn}
-						Search
-					{/if}
-				</button>
-			</HoverTooltip>
 			{#if modelHasTools}
 				<HoverTooltip
 					label="Generate	images"
@@ -298,7 +263,7 @@
 					TooltipClassNames="text-xs !text-left !w-auto whitespace-nowrap !py-1 max-sm:hidden"
 				>
 					<a
-						class="base-tool flex !size-[20px] items-center justify-center rounded-full border !border-gray-200 !bg-white !transition-none dark:!border-gray-500 dark:!bg-transparent"
+						class="base-tool flex !size-[20px] items-center justify-center rounded-full border !border-neutral-200 !bg-white !transition-none dark:!border-neutral-500 dark:!bg-transparent"
 						href={`${base}/tools`}
 						title="Browse more tools"
 					>
@@ -320,7 +285,7 @@
 	}
 
 	.base-tool {
-		@apply flex h-[1.6rem] items-center gap-[.2rem] whitespace-nowrap border border-transparent text-xs outline-none transition-all focus:outline-none active:outline-none dark:hover:text-gray-300 sm:hover:text-purple-600;
+		@apply flex h-[1.6rem] items-center gap-[.2rem] whitespace-nowrap border border-transparent text-xs outline-none transition-all focus:outline-none active:outline-none dark:hover:text-neutral-300 sm:hover:text-purple-600;
 	}
 
 	.active-tool {

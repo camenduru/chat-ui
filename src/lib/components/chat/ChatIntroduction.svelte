@@ -24,16 +24,7 @@
 			<div class="mb-3 flex items-center text-2xl font-semibold">
 				<Logo classNames="mr-1 flex-none" />
 				{envPublic.PUBLIC_APP_NAME}
-				<div
-					class="ml-3 flex h-6 items-center rounded-lg border border-gray-100 bg-gray-50 px-2 text-base text-gray-400 dark:border-gray-700/60 dark:bg-gray-800"
-				>
-					v{envPublic.PUBLIC_VERSION}
-				</div>
 			</div>
-			<p class="text-base text-gray-600 dark:text-gray-400">
-				{envPublic.PUBLIC_APP_DESCRIPTION ||
-					"Making the community's best AI chat models available to everyone."}
-			</p>
 		</div>
 	</div>
 	<div class="lg:col-span-2 lg:pl-24">
@@ -46,19 +37,19 @@
 				>
 			</AnnouncementBanner>
 		{/each}
-		<div class="overflow-hidden rounded-xl border dark:border-gray-800">
+		<div class="overflow-hidden rounded-xl border dark:border-neutral-800">
 			<div class="flex p-3">
 				<div>
-					<div class="text-sm text-gray-600 dark:text-gray-400">Current Model</div>
+					<div class="text-sm text-neutral-600 dark:text-neutral-400">Current Model</div>
 					<div class="flex items-center gap-1.5 font-semibold max-sm:text-smd">
 						{#if currentModel.logoUrl}
 							<img
-								class=" overflown aspect-square size-4 rounded border dark:border-gray-700"
+								class=" overflown aspect-square size-4 rounded border dark:border-neutral-700"
 								src={currentModel.logoUrl}
 								alt=""
 							/>
 						{:else}
-							<div class="size-4 rounded border border-transparent bg-gray-300 dark:bg-gray-800" />
+							<div class="size-4 rounded border border-transparent bg-neutral-300 dark:bg-neutral-800" />
 						{/if}
 						{currentModel.displayName}
 					</div>
@@ -66,21 +57,20 @@
 				<a
 					href="{base}/settings/{currentModel.id}"
 					aria-label="Settings"
-					class="btn ml-auto flex h-7 w-7 self-start rounded-full bg-gray-100 p-1 text-xs hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-gray-600"
+					class="btn ml-auto flex h-7 w-7 self-start rounded-full bg-neutral-100 p-1 text-xs hover:bg-neutral-100 dark:border-neutral-600 dark:bg-neutral-800 dark:hover:bg-neutral-600"
 					><IconGear /></a
 				>
 			</div>
-			<ModelCardMetadata variant="dark" model={currentModel} />
 		</div>
 	</div>
 	{#if currentModel.promptExamples}
 		<div class="lg:col-span-3 lg:mt-6">
-			<p class="mb-3 text-gray-600 dark:text-gray-300">Examples</p>
+			<p class="mb-3 text-neutral-600 dark:text-neutral-300">Examples</p>
 			<div class="grid gap-3 lg:grid-cols-3 lg:gap-5">
 				{#each currentModel.promptExamples as example}
 					<button
 						type="button"
-						class="rounded-xl border bg-gray-50 p-3 text-gray-600 hover:bg-gray-100 dark:border-gray-800 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 max-xl:text-sm xl:p-3.5"
+						class="rounded-xl border bg-neutral-50 p-3 text-neutral-600 hover:bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700 max-xl:text-sm xl:p-3.5"
 						on:click={() => dispatch("message", example.prompt)}
 					>
 						{example.title}
@@ -88,5 +78,5 @@
 				{/each}
 			</div>
 		</div>{/if}
-	<div class="h-40 sm:h-24" />
+	<div class="h-80 sm:h-48" />
 </div>

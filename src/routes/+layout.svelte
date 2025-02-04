@@ -160,39 +160,35 @@
 
 <svelte:head>
 	<title>{envPublic.PUBLIC_APP_NAME}</title>
-	<meta name="description" content="The first open source alternative to ChatGPT. 💪" />
+	<meta name="description" content="Tost Chat is a non-profit, open-source service that serves inference for the latest AI chat models." />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="@huggingface" />
+	<meta name="twitter:site" content="@tost_ai" />
 
 	<!-- use those meta tags everywhere except on the share assistant page -->
 	<!-- feel free to refacto if there's a better way -->
 	{#if !$page.url.pathname.includes("/assistant/") && $page.route.id !== "/assistants" && !$page.url.pathname.includes("/models/") && !$page.url.pathname.includes("/tools")}
 		<meta property="og:title" content={envPublic.PUBLIC_APP_NAME} />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="{envPublic.PUBLIC_ORIGIN || $page.url.origin}{base}" />
+		<meta property="og:url" content="{envPublic.PUBLIC_ORIGIN}{base}" />
 		<meta
 			property="og:image"
-			content="{envPublic.PUBLIC_ORIGIN ||
-				$page.url.origin}{base}/{envPublic.PUBLIC_APP_ASSETS}/thumbnail.png"
+			content="{envPublic.PUBLIC_ORIGIN}{base}/{envPublic.PUBLIC_APP_ASSETS}/thumbnail.png"
 		/>
 		<meta property="og:description" content={envPublic.PUBLIC_APP_DESCRIPTION} />
 	{/if}
 	<link
 		rel="icon"
-		href="{envPublic.PUBLIC_ORIGIN ||
-			$page.url.origin}{base}/{envPublic.PUBLIC_APP_ASSETS}/favicon.ico"
+		href="{envPublic.PUBLIC_ORIGIN}{base}/{envPublic.PUBLIC_APP_ASSETS}/favicon.ico"
 		sizes="32x32"
 	/>
 	<link
 		rel="icon"
-		href="{envPublic.PUBLIC_ORIGIN ||
-			$page.url.origin}{base}/{envPublic.PUBLIC_APP_ASSETS}/icon.svg"
+		href="{envPublic.PUBLIC_ORIGIN}{base}/{envPublic.PUBLIC_APP_ASSETS}/icon.png"
 		type="image/svg+xml"
 	/>
 	<link
 		rel="apple-touch-icon"
-		href="{envPublic.PUBLIC_ORIGIN ||
-			$page.url.origin}{base}/{envPublic.PUBLIC_APP_ASSETS}/apple-touch-icon.png"
+		href="{envPublic.PUBLIC_ORIGIN}{base}/{envPublic.PUBLIC_APP_ASSETS}/apple-touch-icon.png"
 	/>
 	<link
 		rel="manifest"
@@ -228,7 +224,7 @@
 <div
 	class="fixed grid h-full w-screen grid-cols-1 grid-rows-[auto,1fr] overflow-hidden text-smd {!isNavCollapsed
 		? 'md:grid-cols-[290px,1fr]'
-		: 'md:grid-cols-[0px,1fr]'} transition-[300ms] [transition-property:grid-template-columns] dark:text-gray-300 md:grid-rows-[1fr]"
+		: 'md:grid-cols-[0px,1fr]'} transition-[300ms] [transition-property:grid-template-columns] dark:text-neutral-300 md:grid-rows-[1fr]"
 >
 	<ExpandNavigation
 		isCollapsed={isNavCollapsed}

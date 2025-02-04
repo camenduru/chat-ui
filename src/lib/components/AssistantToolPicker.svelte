@@ -59,7 +59,7 @@
 	<div class="flex flex-wrap items-center justify-center gap-2">
 		{#each selectedValues as value}
 			<div
-				class="flex items-center justify-center space-x-2 rounded border border-gray-300 bg-gray-200 px-2 py-1"
+				class="flex items-center justify-center space-x-2 rounded border border-neutral-300 bg-neutral-200 px-2 py-1"
 			>
 				<ToolLogo color={value.color} icon={value.icon} size="sm" />
 				<div class="flex flex-col items-center justify-center py-1">
@@ -70,19 +70,19 @@
 						>{value.displayName}</a
 					>
 					{#if value.createdByName}
-						<p class="text-center text-xs text-gray-500">
+						<p class="text-center text-xs text-neutral-500">
 							Created by
 							<a class="underline" href="{base}/tools?user={value.createdByName}" target="_blank"
 								>{value.createdByName}</a
 							>
 						</p>
 					{:else}
-						<p class="text-center text-xs text-gray-500">Official HuggingChat tool</p>
+						<p class="text-center text-xs text-neutral-500">Official HuggingChat tool</p>
 					{/if}
 				</div>
 				<button
 					on:click|stopPropagation|preventDefault={() => removeValue(value._id)}
-					class="text-lg text-gray-600"
+					class="text-lg text-neutral-600"
 				>
 					<CarbonClose />
 				</button>
@@ -101,17 +101,17 @@
 				debouncedFetch(inputValue);
 			}}
 			disabled={selectedValues.length >= maxValues}
-			class="w-full rounded border border-gray-200 bg-gray-100 px-3 py-2"
+			class="w-full rounded border border-neutral-200 bg-neutral-100 px-3 py-2"
 			class:opacity-50={selectedValues.length >= maxValues}
-			class:bg-gray-100={selectedValues.length >= maxValues}
+			class:bg-neutral-100={selectedValues.length >= maxValues}
 			placeholder="Type to search tools..."
 		/>
 		{#if suggestions.length > 0}
 			<div
-				class="invisible absolute z-10 mt-1 w-full rounded border border-gray-300 bg-white shadow-lg group-focus-within:visible"
+				class="invisible absolute z-10 mt-1 w-full rounded border border-neutral-300 bg-white shadow-lg group-focus-within:visible"
 			>
 				{#if inputValue === ""}
-					<p class="px-3 py-2 text-left text-xs text-gray-500">
+					<p class="px-3 py-2 text-left text-xs text-neutral-500">
 						Start typing to search for tools...
 					</p>
 				{:else}
@@ -122,7 +122,7 @@
 						>
 							{suggestion.displayName}
 							{#if suggestion.createdByName}
-								<span class="text-xs text-gray-500"> by {suggestion.createdByName}</span>
+								<span class="text-xs text-neutral-500"> by {suggestion.createdByName}</span>
 							{/if}
 						</button>
 					{/each}

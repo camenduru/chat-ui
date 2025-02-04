@@ -53,17 +53,17 @@
 >
 	<summary
 		class="absolute bottom-0 flex h-8
-	cursor-pointer select-none items-center gap-1 rounded-lg border bg-white px-2 py-1.5 shadow-sm hover:shadow-none dark:border-gray-800 dark:bg-gray-900"
+	cursor-pointer select-none items-center gap-1 rounded-lg border bg-white px-2 py-1.5 shadow-sm hover:shadow-none dark:border-neutral-800 dark:bg-neutral-800"
 	>
 		<IconTool classNames="dark:text-purple-600" />
 		Tools
-		<span class="text-gray-400 dark:text-gray-500"> ({activeToolCount}) </span>
+		<span class="text-neutral-400 dark:text-neutral-500"> ({activeToolCount}) </span>
 	</summary>
 	<div
-		class="absolute bottom-10 h-max w-max select-none items-center gap-1 rounded-lg border bg-white p-0.5 shadow-sm dark:border-gray-800 dark:bg-gray-900"
+		class="absolute bottom-10 h-max w-max select-none items-center gap-1 rounded-lg border bg-white p-0.5 shadow-sm dark:border-neutral-800 dark:bg-neutral-800"
 	>
 		<div class="grid grid-cols-2 gap-x-6 gap-y-1 p-3">
-			<div class="col-span-2 flex items-center gap-1.5 text-sm text-gray-500">
+			<div class="col-span-2 flex items-center gap-1.5 text-sm text-neutral-500">
 				Available tools
 				{#if isHuggingChat}
 					<a

@@ -189,17 +189,17 @@
 			<img
 				src="{base}/settings/assistants/{$page.data.assistant._id}/avatar.jpg"
 				alt="Avatar"
-				class="mt-5 h-3 w-3 flex-none select-none rounded-full shadow-lg"
+				class="mt-5 h-5 w-5 flex-none select-none rounded-full shadow-lg"
 			/>
 		{:else}
 			<img
 				alt=""
-				src="https://huggingface.co/avatars/2edb18bd0206c16b433841a47f53fa8e.svg"
-				class="mt-5 h-3 w-3 flex-none select-none rounded-full shadow-lg"
+				src="https://chat1.tost.ai/tostchat/logo.png"
+				class="mt-5 h-5 w-5 flex-none select-none rounded-full shadow-lg"
 			/>
 		{/if}
 		<div
-			class="relative min-h-[calc(2rem+theme(spacing[3.5])*2)] min-w-[60px] break-words rounded-2xl border border-gray-100 bg-gradient-to-br from-gray-50 px-5 py-3.5 text-gray-600 prose-pre:my-2 dark:border-gray-800 dark:from-gray-800/40 dark:text-gray-300"
+			class="relative min-h-[calc(2rem+theme(spacing[3.5])*2)] min-w-[60px] break-words rounded-2xl border border-neutral-100 bg-gradient-to-br from-neutral-50 px-5 py-3.5 text-neutral-600 prose-pre:my-2 dark:border-neutral-800 dark:from-neutral-800/40 dark:text-neutral-300"
 		>
 			{#if message.files?.length}
 				<div class="flex h-fit flex-wrap gap-x-5 gap-y-2">
@@ -242,7 +242,7 @@
 				{/if}
 
 				<div
-					class="prose max-w-none dark:prose-invert max-sm:prose-sm prose-headings:font-semibold prose-h1:text-lg prose-h2:text-base prose-h3:text-base prose-pre:bg-gray-800 dark:prose-pre:bg-gray-900"
+					class="prose max-w-none dark:prose-invert max-sm:prose-sm prose-headings:font-semibold prose-h1:text-lg prose-h2:text-base prose-h3:text-base prose-pre:bg-neutral-800 dark:prose-pre:bg-neutral-800"
 				>
 					<MarkdownRenderer content={message.content} sources={webSearchSources} />
 				</div>
@@ -251,10 +251,10 @@
 			<!-- Web Search sources -->
 			{#if webSearchSources?.length}
 				<div class="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1.5 text-sm">
-					<div class="text-gray-400">Sources:</div>
+					<div class="text-neutral-400">Sources:</div>
 					{#each webSearchSources as { link, title }}
 						<a
-							class="flex items-center gap-2 whitespace-nowrap rounded-lg border bg-white px-2 py-1.5 leading-none hover:border-gray-300 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-700"
+							class="flex items-center gap-2 whitespace-nowrap rounded-lg border bg-white px-2 py-1.5 leading-none hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800 dark:hover:border-neutral-700"
 							href={link}
 							target="_blank"
 						>
@@ -273,10 +273,10 @@
 			<!-- Endpoint web sources -->
 			{#if messageFinalAnswer?.webSources && messageFinalAnswer.webSources.length}
 				<div class="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1.5 text-sm">
-					<div class="text-gray-400">Sources:</div>
+					<div class="text-neutral-400">Sources:</div>
 					{#each messageFinalAnswer.webSources as { uri, title }}
 						<a
-							class="flex items-center gap-2 whitespace-nowrap rounded-lg border bg-white px-2 py-1.5 leading-none hover:border-gray-300 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-700"
+							class="flex items-center gap-2 whitespace-nowrap rounded-lg border bg-white px-2 py-1.5 leading-none hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800 dark:hover:border-neutral-700"
 							href={uri}
 							target="_blank"
 						>
@@ -304,7 +304,7 @@
 					<Vote {message} on:vote />
 				{/if}
 				<button
-					class="btn rounded-sm p-1 text-sm text-gray-400 hover:text-gray-500 focus:ring-0 dark:text-gray-400 dark:hover:text-gray-300"
+					class="btn rounded-sm p-1 text-sm text-neutral-400 hover:text-neutral-500 focus:ring-0 dark:text-neutral-400 dark:hover:text-neutral-300"
 					title="Retry"
 					type="button"
 					on:click={() => {
@@ -317,7 +317,7 @@
 					on:click={() => {
 						isCopied = true;
 					}}
-					classNames="btn rounded-sm p-1 text-sm text-gray-400 hover:text-gray-500 focus:ring-0 dark:text-gray-400 dark:hover:text-gray-300"
+					classNames="btn rounded-sm p-1 text-sm text-neutral-400 hover:text-neutral-500 focus:ring-0 dark:text-neutral-400 dark:hover:text-neutral-300"
 					value={message.content}
 				/>
 			</div>
@@ -346,7 +346,7 @@
 			<div class="flex w-full flex-row flex-nowrap">
 				{#if !editMode}
 					<p
-						class="disabled w-full appearance-none whitespace-break-spaces text-wrap break-words bg-inherit px-5 py-3.5 text-gray-500 dark:text-gray-400"
+						class="disabled w-full appearance-none whitespace-break-spaces text-wrap break-words bg-inherit px-5 py-3.5 text-neutral-500 dark:text-neutral-400"
 					>
 						{message.content.trim()}
 					</p>
@@ -360,7 +360,7 @@
 						}}
 					>
 						<textarea
-							class="w-full whitespace-break-spaces break-words rounded-xl bg-gray-100 px-5 py-3.5 text-gray-500 *:h-max dark:bg-gray-800 dark:text-gray-400"
+							class="w-full whitespace-break-spaces break-words rounded-xl bg-neutral-100 px-5 py-3.5 text-neutral-500 *:h-max dark:bg-neutral-800 dark:text-neutral-400"
 							rows="5"
 							bind:this={editContentEl}
 							value={message.content.trim()}
@@ -372,8 +372,8 @@
 								type="submit"
 								class="btn rounded-lg px-3 py-1.5 text-sm
                                 {loading
-									? 'bg-gray-300 text-gray-400 dark:bg-gray-700 dark:text-gray-600'
-									: 'bg-gray-200 text-gray-600 hover:text-gray-800   focus:ring-0 dark:bg-gray-800 dark:text-gray-300 dark:hover:text-gray-200'}
+									? 'bg-neutral-300 text-neutral-400 dark:bg-neutral-700 dark:text-neutral-600'
+									: 'bg-neutral-200 text-neutral-600 hover:text-neutral-800   focus:ring-0 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:text-neutral-200'}
 								"
 								disabled={loading}
 							>
@@ -381,7 +381,7 @@
 							</button>
 							<button
 								type="button"
-								class="btn rounded-sm p-2 text-sm text-gray-400 hover:text-gray-500 focus:ring-0 dark:text-gray-400 dark:hover:text-gray-300"
+								class="btn rounded-sm p-2 text-sm text-neutral-400 hover:text-neutral-500 focus:ring-0 dark:text-neutral-400 dark:hover:text-neutral-300"
 								on:click={() => {
 									$convTreeStore.editing = null;
 								}}
@@ -402,7 +402,7 @@
 					>
 						<div class="mx-auto flex flex-row flex-nowrap gap-2">
 							<a
-								class="rounded-lg border border-gray-100 bg-gray-100 p-1 text-xs text-gray-400 group-hover:block hover:text-gray-500 dark:border-gray-800 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-gray-300 max-sm:!hidden md:hidden"
+								class="rounded-lg border border-neutral-100 bg-neutral-100 p-1 text-xs text-neutral-400 group-hover:block hover:text-neutral-500 dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-300 max-sm:!hidden md:hidden"
 								title="Download prompt and parameters"
 								type="button"
 								target="_blank"
@@ -412,7 +412,7 @@
 							</a>
 							{#if !readOnly}
 								<button
-									class="cursor-pointer rounded-lg border border-gray-100 bg-gray-100 p-1 text-xs text-gray-400 group-hover:block hover:text-gray-500 dark:border-gray-800 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-gray-300 md:hidden lg:-right-2"
+									class="cursor-pointer rounded-lg border border-neutral-100 bg-neutral-100 p-1 text-xs text-neutral-400 group-hover:block hover:text-neutral-500 dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-300 md:hidden lg:-right-2"
 									title="Branch"
 									type="button"
 									on:click={() => ($convTreeStore.editing = message.id)}

@@ -156,7 +156,7 @@ Do not use prefixes such as Response: or Answer: when answering to the user.`,
 				yield {
 					type: MessageUpdateType.Reasoning,
 					subtype: MessageReasoningUpdateType.Status,
-					status,
+					status: "Thinking...",
 				};
 				status = "";
 			}

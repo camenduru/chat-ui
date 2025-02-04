@@ -59,7 +59,7 @@
 				/>
 			{:else}
 				<div
-					class="flex size-16 flex-none items-center justify-center rounded-full bg-gray-300 text-4xl font-semibold uppercase text-gray-500 sm:size-24"
+					class="flex size-16 flex-none items-center justify-center rounded-full bg-neutral-300 text-4xl font-semibold uppercase text-neutral-500 sm:size-24"
 				>
 					{assistant?.name[0]}
 				</div>
@@ -80,26 +80,26 @@
 						<IconInternet classNames="text-sm text-blue-600" />
 					</span>
 				{/if}
-				<span class="rounded-full border px-2 py-0.5 text-sm leading-none text-gray-500"
+				<span class="rounded-full border px-2 py-0.5 text-sm leading-none text-neutral-500"
 					>public</span
 				>
 			</div>
 
 			{#if assistant?.description}
-				<p class="mb-2 line-clamp-2 text-sm text-gray-500">
+				<p class="mb-2 line-clamp-2 text-sm text-neutral-500">
 					{assistant.description}
 				</p>
 			{/if}
 
-			<p class="text-sm text-gray-500">
+			<p class="text-sm text-neutral-500">
 				Model: <span class="font-semibold"> {assistant?.modelId} </span>
-				<span class="text-gray-300">•</span> Created by
+				<span class="text-neutral-300">•</span> Created by
 				<a class="underline" href="{base}/assistants?user={assistant?.createdByName}">
 					{assistant?.createdByName}
 				</a>
 			</p>
 			<div
-				class="flex flex-wrap items-center gap-x-4 gap-y-2 whitespace-nowrap text-sm text-gray-500 hover:*:text-gray-800 max-sm:justify-center"
+				class="flex flex-wrap items-center gap-x-4 gap-y-2 whitespace-nowrap text-sm text-neutral-500 hover:*:text-neutral-800 max-sm:justify-center"
 			>
 				<div class="w-full sm:w-auto">
 					<button
@@ -155,13 +155,13 @@
 							<CarbonFlag class="mr-1.5 inline text-xs" />Report
 						</button>
 					{:else}
-						<button type="button" disabled class="text-gray-700">
+						<button type="button" disabled class="text-neutral-700">
 							<CarbonFlag class="mr-1.5 inline text-xs" />Reported</button
 						>
 					{/if}
 				{/if}
 				{#if data?.user?.isAdmin}
-					<span class="rounded-full border px-2 py-0.5 text-sm leading-none text-gray-500"
+					<span class="rounded-full border px-2 py-0.5 text-sm leading-none text-neutral-500"
 						>{assistant?.review?.toLocaleUpperCase()}</span
 					>
 
@@ -233,17 +233,17 @@
 	<div>
 		<h2 class="text-lg font-semibold">Direct URL</h2>
 
-		<p class="pb-2 text-sm text-gray-500">Share this link for people to use your assistant.</p>
+		<p class="pb-2 text-sm text-neutral-500">Share this link for people to use your assistant.</p>
 
 		<div
-			class="flex flex-row gap-2 rounded-lg border-2 border-gray-200 bg-gray-100 py-2 pl-3 pr-1.5"
+			class="flex flex-row gap-2 rounded-lg border-2 border-neutral-200 bg-neutral-100 py-2 pl-3 pr-1.5"
 		>
 			<input disabled class="flex-1 truncate bg-inherit" value={shareUrl} />
 			<CopyToClipBoardBtn
 				value={shareUrl}
 				classNames="!border-none !shadow-none !py-0 !px-1 !rounded-md"
 			>
-				<div class="flex items-center gap-1.5 text-gray-500 hover:underline">
+				<div class="flex items-center gap-1.5 text-neutral-500 hover:underline">
 					<CarbonLink />Copy
 				</div>
 			</CopyToClipBoardBtn>
@@ -255,7 +255,7 @@
 		<h2 class="mb-2 inline font-semibold">System Instructions</h2>
 		<div
 			id="System Instructions"
-			class="overlow-y-auto mt-2 box-border h-fit max-h-[240px] w-full overflow-y-auto whitespace-pre-line rounded-lg border-2 border-gray-200 bg-gray-100 p-2 disabled:cursor-not-allowed 2xl:max-h-[310px]"
+			class="overlow-y-auto mt-2 box-border h-fit max-h-[240px] w-full overflow-y-auto whitespace-pre-line rounded-lg border-2 border-neutral-200 bg-neutral-100 p-2 disabled:cursor-not-allowed 2xl:max-h-[310px]"
 		>
 			{#if assistant?.dynamicPrompt}
 				{#each prepromptTags as tag}
@@ -288,10 +288,10 @@
 					</span>
 					<h2 class="font-semibold">Tools</h2>
 				</div>
-				<p class="w-full text-sm text-gray-500">
+				<p class="w-full text-sm text-neutral-500">
 					This Assistant has access to the following tools:
 				</p>
-				<ul class="mr-2 mt-2 flex flex-wrap gap-2.5 text-sm text-gray-800">
+				<ul class="mr-2 mt-2 flex flex-wrap gap-2.5 text-sm text-neutral-800">
 					{#each assistant.tools as tool}
 						<ToolBadge toolId={tool} />
 					{/each}
@@ -310,28 +310,28 @@
 					<h2 class=" font-semibold">Internet Access</h2>
 				</div>
 				{#if assistant?.rag?.allowAllDomains}
-					<p class="text-sm text-gray-500">
+					<p class="text-sm text-neutral-500">
 						This Assistant uses Web Search to find information on Internet.
 					</p>
 				{:else if !!assistant?.rag?.allowedDomains && assistant?.rag?.allowedDomains.length}
-					<p class="pb-4 text-sm text-gray-500">
+					<p class="pb-4 text-sm text-neutral-500">
 						This Assistant can use Web Search on the following domains:
 					</p>
-					<ul class="mr-2 flex flex-wrap gap-2.5 text-sm text-gray-800">
+					<ul class="mr-2 flex flex-wrap gap-2.5 text-sm text-neutral-800">
 						{#each assistant?.rag?.allowedDomains as domain}
 							<li
-								class="break-all rounded-lg border border-gray-200 bg-gray-100 px-2 py-0.5 leading-tight decoration-gray-400"
+								class="break-all rounded-lg border border-neutral-200 bg-neutral-100 px-2 py-0.5 leading-tight decoration-neutral-400"
 							>
 								<a target="_blank" class="underline" href={domain}>{domain}</a>
 							</li>
 						{/each}
 					</ul>
 				{:else if !!assistant?.rag?.allowedLinks && assistant?.rag?.allowedLinks.length}
-					<p class="pb-4 text-sm text-gray-500">This Assistant can browse the following links:</p>
-					<ul class="mr-2 flex flex-wrap gap-2.5 text-sm text-gray-800">
+					<p class="pb-4 text-sm text-neutral-500">This Assistant can browse the following links:</p>
+					<ul class="mr-2 flex flex-wrap gap-2.5 text-sm text-neutral-800">
 						{#each assistant?.rag?.allowedLinks as link}
 							<li
-								class="break-all rounded-lg border border-gray-200 bg-gray-100 px-2 py-0.5 leading-tight decoration-gray-400"
+								class="break-all rounded-lg border border-neutral-200 bg-neutral-100 px-2 py-0.5 leading-tight decoration-neutral-400"
 							>
 								<a target="_blank" class="underline" href={link}>{link}</a>
 							</li>
@@ -339,7 +339,7 @@
 					</ul>
 				{/if}
 				{#if assistant?.dynamicPrompt}
-					<p class="text-sm text-gray-500">
+					<p class="text-sm text-neutral-500">
 						This Assistant has dynamic prompts enabled and can make requests to external services.
 					</p>
 				{/if}

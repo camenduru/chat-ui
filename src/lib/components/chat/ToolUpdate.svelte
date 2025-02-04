@@ -75,8 +75,8 @@
 
 {#if toolFnName && toolFnName !== "websearch"}
 	<details
-		class="group/tool my-2.5 w-fit cursor-pointer rounded-lg border border-gray-200 bg-white pl-1 pr-2.5 text-sm shadow-sm transition-all open:mb-3
-        open:border-purple-500/10 open:bg-purple-600/5 open:shadow-sm dark:border-gray-800 dark:bg-gray-900 open:dark:border-purple-800/40 open:dark:bg-purple-800/10"
+		class="group/tool my-2.5 w-fit cursor-pointer rounded-lg border border-neutral-200 bg-white pl-1 pr-2.5 text-sm shadow-sm transition-all open:mb-3
+        open:border-purple-500/10 open:bg-purple-600/5 open:shadow-sm dark:border-neutral-800 dark:bg-neutral-800 open:dark:border-purple-800/40 open:dark:bg-purple-800/10"
 	>
 		<summary
 			class="relative flex select-none list-none items-center gap-1.5 py-1 group-open/tool:text-purple-700 group-open/tool:dark:text-purple-300"
@@ -122,7 +122,7 @@
 			{#if toolUpdate.subtype === MessageToolUpdateType.Call}
 				<div class="mt-1 flex items-center gap-2 opacity-80">
 					<h3 class="text-sm">Parameters</h3>
-					<div class="h-px flex-1 bg-gradient-to-r from-gray-500/20" />
+					<div class="h-px flex-1 bg-gradient-to-r from-neutral-500/20" />
 				</div>
 				<ul class="py-1 text-sm">
 					{#each Object.entries(toolUpdate.call.parameters ?? {}) as [k, v]}
@@ -137,13 +137,13 @@
 			{:else if toolUpdate.subtype === MessageToolUpdateType.Error}
 				<div class="mt-1 flex items-center gap-2 opacity-80">
 					<h3 class="text-sm">Error</h3>
-					<div class="h-px flex-1 bg-gradient-to-r from-gray-500/20" />
+					<div class="h-px flex-1 bg-gradient-to-r from-neutral-500/20" />
 				</div>
 				<p class="text-sm">{toolUpdate.message}</p>
 			{:else if isMessageToolResultUpdate(toolUpdate) && toolUpdate.result.status === ToolResultStatus.Success && toolUpdate.result.display}
 				<div class="mt-1 flex items-center gap-2 opacity-80">
 					<h3 class="text-sm">Result</h3>
-					<div class="h-px flex-1 bg-gradient-to-r from-gray-500/20" />
+					<div class="h-px flex-1 bg-gradient-to-r from-neutral-500/20" />
 				</div>
 				<ul class="py-1 text-sm">
 					{#each toolUpdate.result.outputs as output}

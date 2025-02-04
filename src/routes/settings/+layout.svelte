@@ -36,7 +36,7 @@
 		<slot />
 		{#if $settings.recentlySaved}
 			<div
-				class="absolute bottom-4 right-4 m-2 flex items-center gap-1.5 rounded-full border border-gray-300 bg-gray-200 px-3 py-1 text-black"
+				class="absolute bottom-4 right-4 m-2 flex items-center gap-1.5 rounded-full border border-neutral-300 bg-neutral-200 px-3 py-1 text-black"
 			>
 				<CarbonCheckmark class="text-green-500" />
 				Saved

@@ -40,7 +40,7 @@
 </script>
 
 <div bind:this={loader} class="flex animate-pulse flex-col gap-4">
-	<div class="ml-2 h-5 w-4/5 gap-5 rounded bg-gray-200 dark:bg-gray-700" />
-	<div class="ml-2 h-5 w-4/5 gap-5 rounded bg-gray-200 dark:bg-gray-700" />
-	<div class="ml-2 h-5 w-4/5 gap-5 rounded bg-gray-200 dark:bg-gray-700" />
+	<div class="ml-2 h-5 w-4/5 gap-5 rounded bg-neutral-200 dark:bg-neutral-700" />
+	<div class="ml-2 h-5 w-4/5 gap-5 rounded bg-neutral-200 dark:bg-neutral-700" />
+	<div class="ml-2 h-5 w-4/5 gap-5 rounded bg-neutral-200 dark:bg-neutral-700" />
 </div>

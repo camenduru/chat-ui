@@ -13,7 +13,7 @@
 			<img class="h-64 w-64 rounded-full" style="object-fit: cover;" src={avatar} alt="avatar" />
 		{/if}
 		<div class="ml-10 flex flex-col items-start">
-			<p class="mb-2 mt-0 text-3xl font-normal text-gray-400">
+			<p class="mb-2 mt-0 text-3xl font-normal text-neutral-400">
 				<span class="mr-1.5 h-8 w-8">
 					<!-- eslint-disable-next-line -->
 					{@html logo}
@@ -33,7 +33,7 @@
 		</div>
 	</div>
 	{#if createdByName}
-		<p class="absolute bottom-4 right-8 text-2xl text-gray-400">
+		<p class="absolute bottom-4 right-8 text-2xl text-neutral-400">
 			An AI assistant created by {createdByName}
 		</p>
 	{/if}

@@ -25,9 +25,9 @@
 		confirmDelete = false;
 	}}
 	href="{base}/conversation/{conv.id}"
-	class="group flex h-10 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 sm:h-[2.35rem] {conv.id ===
+	class="group flex h-10 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-neutral-600 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-700 sm:h-[2.35rem] {conv.id ===
 	$page.params.id
-		? 'bg-gray-100 dark:bg-gray-700'
+		? 'bg-neutral-100 dark:bg-neutral-700'
 		: ''}"
 >
 	<div class="flex flex-1 items-center truncate">
@@ -43,7 +43,7 @@
 			{conv.title.replace(/\p{Emoji}/gu, "")}
 		{:else if conv.assistantId}
 			<div
-				class="mr-1.5 flex size-4 flex-none items-center justify-center rounded-full bg-gray-300 text-xs font-bold uppercase text-gray-500"
+				class="mr-1.5 flex size-4 flex-none items-center justify-center rounded-full bg-neutral-300 text-xs font-bold uppercase text-neutral-500"
 			/>
 			{conv.title.replace(/\p{Emoji}/gu, "")}
 		{:else}
@@ -58,7 +58,7 @@
 			title="Cancel delete action"
 			on:click|preventDefault={() => (confirmDelete = false)}
 		>
-			<CarbonClose class="text-xs text-gray-400 hover:text-gray-500 dark:hover:text-gray-300" />
+			<CarbonClose class="text-xs text-neutral-400 hover:text-neutral-500 dark:hover:text-neutral-300" />
 		</button>
 		<button
 			type="button"
@@ -69,7 +69,7 @@
 				dispatch("deleteConversation", conv.id);
 			}}
 		>
-			<CarbonCheckmark class="text-xs text-gray-400 hover:text-gray-500 dark:hover:text-gray-300" />
+			<CarbonCheckmark class="text-xs text-neutral-400 hover:text-neutral-500 dark:hover:text-neutral-300" />
 		</button>
 	{:else}
 		<button
@@ -82,7 +82,7 @@
 				dispatch("editConversationTitle", { id: conv.id, title: newTitle });
 			}}
 		>
-			<CarbonEdit class="text-xs text-gray-400 hover:text-gray-500 dark:hover:text-gray-300" />
+			<CarbonEdit class="text-xs text-neutral-400 hover:text-neutral-500 dark:hover:text-neutral-300" />
 		</button>
 
 		<button
@@ -97,7 +97,7 @@
 				}
 			}}
 		>
-			<CarbonTrashCan class="text-xs text-gray-400  hover:text-gray-500 dark:hover:text-gray-300" />
+			<CarbonTrashCan class="text-xs text-neutral-400  hover:text-neutral-500 dark:hover:text-neutral-300" />
 		</button>
 	{/if}
 </a>

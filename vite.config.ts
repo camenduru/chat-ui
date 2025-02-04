@@ -36,6 +36,7 @@ export default defineConfig({
 	},
 	server: {
 		open: "/",
+		allowedHosts: ["chat1.tost.ai"],
 	},
 	test: {
 		setupFiles: ["./scripts/setupTest.ts"],

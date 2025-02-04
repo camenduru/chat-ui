@@ -31,7 +31,7 @@
 </script>
 
 <nav
-	class="flex h-12 items-center justify-between border-b bg-gray-50 px-3 dark:border-gray-800 dark:bg-gray-800/70 md:hidden"
+	class="flex h-12 items-center justify-between border-b bg-neutral-50 px-3 dark:border-neutral-800 dark:bg-neutral-800/70 md:hidden"
 >
 	<button
 		type="button"
@@ -52,7 +52,7 @@
 	>
 </nav>
 <nav
-	class="fixed inset-0 z-30 grid max-h-screen grid-cols-1 grid-rows-[auto,auto,1fr,auto] bg-white dark:bg-gray-900 {isOpen
+	class="fixed inset-0 z-30 grid max-h-screen grid-cols-1 grid-rows-[auto,auto,1fr,auto] bg-white dark:bg-neutral-800 {isOpen
 		? 'block'
 		: 'hidden'}"
 >

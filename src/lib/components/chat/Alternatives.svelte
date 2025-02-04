@@ -16,17 +16,17 @@
 	class="font-white group/navbranch z-0 -mt-1 ml-3.5 mr-auto flex h-6 w-fit select-none flex-row items-center justify-center gap-1 text-sm"
 >
 	<button
-		class="inline text-lg font-thin text-gray-400 hover:text-gray-800 disabled:pointer-events-none disabled:opacity-25 dark:text-gray-500 dark:hover:text-gray-200"
+		class="inline text-lg font-thin text-neutral-400 hover:text-neutral-800 disabled:pointer-events-none disabled:opacity-25 dark:text-neutral-500 dark:hover:text-neutral-200"
 		on:click={() => (childToRender = Math.max(0, childToRender - 1))}
 		disabled={childToRender === 0 || loading}
 	>
 		<CarbonChevronLeft class="text-sm" />
 	</button>
-	<span class=" text-gray-400 dark:text-gray-500">
+	<span class=" text-neutral-400 dark:text-neutral-500">
 		{childToRender + 1} / {nChildren}
 	</span>
 	<button
-		class="inline text-lg font-thin text-gray-400 hover:text-gray-800 disabled:pointer-events-none disabled:opacity-25 dark:text-gray-500 dark:hover:text-gray-200"
+		class="inline text-lg font-thin text-neutral-400 hover:text-neutral-800 disabled:pointer-events-none disabled:opacity-25 dark:text-neutral-500 dark:hover:text-neutral-200"
 		on:click={() =>
 			(childToRender = Math.min(message?.children?.length ?? 1 - 1, childToRender + 1))}
 		disabled={childToRender === nChildren - 1 || loading}
@@ -45,7 +45,7 @@
 		>
 			<input name="messageId" value={message.children[childToRender]} type="hidden" />
 			<button
-				class="flex items-center justify-center text-xs text-gray-400 hover:text-gray-800 dark:text-gray-500 dark:hover:text-gray-200"
+				class="flex items-center justify-center text-xs text-neutral-400 hover:text-neutral-800 dark:text-neutral-500 dark:hover:text-neutral-200"
 				type="submit"
 				><CarbonTrashCan />
 			</button>

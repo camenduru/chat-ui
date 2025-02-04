@@ -14,17 +14,17 @@
 </script>
 
 <div
-	class="flex items-center gap-5 rounded-xl bg-gray-100 px-3 py-2 text-xs sm:text-sm
+	class="flex items-center gap-5 rounded-xl bg-neutral-100 px-3 py-2 text-xs sm:text-sm
 	{variant === 'dark'
-		? 'text-gray-600 dark:bg-gray-800 dark:text-gray-300'
-		: 'text-gray-800 dark:bg-gray-100 dark:text-gray-600'}"
+		? 'text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300'
+		: 'text-neutral-800 dark:bg-neutral-100 dark:text-neutral-600'}"
 >
 	<a
 		href={model.modelUrl || "https://huggingface.co/" + model.name}
 		target="_blank"
 		rel="noreferrer"
 		class="flex items-center hover:underline"
-		><CarbonArrowUpRight class="mr-1.5 shrink-0 text-xs text-gray-400" />
+		><CarbonArrowUpRight class="mr-1.5 shrink-0 text-xs text-neutral-400" />
 		Model
 		<div class="max-sm:hidden">&nbsp;page</div></a
 	>
@@ -34,7 +34,7 @@
 			target="_blank"
 			rel="noreferrer"
 			class="flex items-center hover:underline"
-			><CarbonArrowUpRight class="mr-1.5 shrink-0 text-xs text-gray-400" />
+			><CarbonArrowUpRight class="mr-1.5 shrink-0 text-xs text-neutral-400" />
 			Dataset
 			<div class="max-sm:hidden">&nbsp;page</div></a
 		>
@@ -45,7 +45,7 @@
 			target="_blank"
 			rel="noreferrer"
 			class="flex items-center hover:underline"
-			><CarbonCode class="mr-1.5 shrink-0 text-xs text-gray-400" />
+			><CarbonCode class="mr-1.5 shrink-0 text-xs text-neutral-400" />
 			API
 		</a>
 	{/if}
@@ -57,10 +57,10 @@
 			rel="noreferrer"
 		>
 			{#if model.name.startsWith("meta-llama/Meta-Llama")}
-				<BIMeta class="mr-1.5 shrink-0 text-xs text-gray-400" />
+				<BIMeta class="mr-1.5 shrink-0 text-xs text-neutral-400" />
 				Built with Llama
 			{:else}
-				<CarbonEarth class="mr-1.5 shrink-0 text-xs text-gray-400" />
+				<CarbonEarth class="mr-1.5 shrink-0 text-xs text-neutral-400" />
 				Website
 			{/if}
 		</a>
