@@ -194,7 +194,7 @@
 		{:else}
 			<img
 				alt=""
-				src="https://chat1.tost.ai/tostchat/logo.png"
+				src="https://chat.tost.ai/tostchat/logo.png"
 				class="mt-5 h-5 w-5 flex-none select-none rounded-full shadow-lg"
 			/>
 		{/if}
