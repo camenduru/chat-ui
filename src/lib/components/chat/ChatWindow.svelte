@@ -504,7 +504,7 @@
 							</span>
 						{/if}
 					{/if}
-					<span class="max-sm:hidden">·</span><br class="sm:hidden" /> Generated content may be inaccurate
+					<span class="max-sm:hidden"></span><br class="sm:hidden" /> Generated content may be inaccurate
 					or false.
 				</p>
 				{#if messages.length}
@@ -524,6 +524,10 @@
 						{/if}
 					</button>
 				{/if}
+			</div>
+			<div class="flex items-center justify-end mt-2 self-stretch px-1 text-xs text-neutral-400/90 max-md:mb-2 max-sm:gap-0">
+				Tost Chat Sponsored by
+				<a href="https://akash.network" target="_blank" class="flex items-center">&nbsp;Akash Network&nbsp;&nbsp;❤</a>
 			</div>
 		</div>
 	</div>

@@ -82,11 +82,11 @@
 
 		<div class="mt-12 flex flex-col gap-3">
 			<a
-				href="https://huggingface.co/spaces/huggingchat/chat-ui/discussions"
+				href="https://github.com/huggingface/chat-ui/blob/main/LICENSE"
 				target="_blank"
 				rel="noreferrer"
 				class="flex items-center underline decoration-neutral-300 underline-offset-2 hover:decoration-neutral-700"
-				><CarbonArrowUpRight class="mr-1.5 shrink-0 text-sm " /> Share your feedback on HuggingChat</a
+				><CarbonArrowUpRight class="mr-1.5 shrink-0 text-sm " />Chat UI License</a
 			>
 			<button
 				on:click|preventDefault={() => (isConfirmingDeletion = true)}
